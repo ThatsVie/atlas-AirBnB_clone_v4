@@ -245,10 +245,12 @@ To view a README file for the Atlas AirBnb Clone v3 project please visit [this l
 
 #### 0-hbnb.py, templates/0-hbnb.html
 
-Input this command in your terminal
+**Input this command in your terminal**
+
 ```bash
 HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db python3 -m web_dynamic.0-hbnb
 ```
+
 This command is executing 0-hbnb.py. It sets several environment variables related to MySQL database connection parameters before running the script. 
 
 HBNB_MYSQL_USER=hbnb_dev: This sets the MySQL database username to hbnb_dev.
@@ -281,7 +283,8 @@ Some image requests return 304 responses, indicating no modification since the l
 
 
 
-In another window if your terminal input this command: 
+**In another window if your terminal input this command: **
+
 ```bash
 curl -s -XGET http://0.0.0.0:5000/0-hbnb/ | head -6
 ```
@@ -302,7 +305,8 @@ head -6: This is a command that prints the first 6 lines of the input it receive
 
 ![image](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/60b5466d-6ce4-42c1-8635-6abd5d02dd07)
 
-In your browser:
+**In your browser:**
+
 ```bash
 http://localhost:5000/0-hbnb/
 ```
@@ -310,12 +314,14 @@ http://localhost:5000/0-hbnb/
 
 #### 1-hbnb.py, templates/1-hbnb.html, static/scripts/1-hbnb.js
 
-Input this command in your terminal:
+**Input this command in your terminal:**
+
 ```bash
 HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db python3 -m web_dynamic.1-hbnb
 ```
 
-In your browser:
+**In your browser:**
+
 ```bash
 http://localhost:5000/1-hbnb/
 ```

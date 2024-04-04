@@ -321,6 +321,8 @@ http://localhost:5000/1-hbnb/
 ```
 ![clicking on amenities httplocalhost50001-hbnb](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/3f910ec8-ada4-4129-81df-0cd2f4575954)
 
+![checking boxes](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/210232b5-9e1f-4f56-9d64-5ddfda9cb7ca)
+
 ### Authors
 Courtney Graham - [Github](https://github.com/grahacr)
 

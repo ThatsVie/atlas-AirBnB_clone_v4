@@ -241,6 +241,86 @@ To view a README file for the Atlas AirBnb Clone v3 project please visit [this l
 
 ## AirBnb Clone v4 Web Dynamic
 
+### Usage
+
+#### 0-hbnb.py, templates/0-hbnb.html
+
+Input this command in your terminal
+```bash
+HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db python3 -m web_dynamic.0-hbnb
+```
+This command is executing 0-hbnb.py. It sets several environment variables related to MySQL database connection parameters before running the script. 
+
+HBNB_MYSQL_USER=hbnb_dev: This sets the MySQL database username to hbnb_dev.
+
+HBNB_MYSQL_PWD=hbnb_dev_pwd: This sets the MySQL database password to hbnb_dev_pwd.
+
+HBNB_MYSQL_HOST=localhost: This sets the MySQL database host to localhost.
+
+HBNB_MYSQL_DB=hbnb_dev_db: This sets the name of the MySQL database to hbnb_dev_db.
+
+HBNB_TYPE_STORAGE=db: This sets the storage type to db, indicating that the application is configured to use a database for storage.
+
+After setting these environment variables, the command runs the Python script 0-hbnb.py as a module using Python 3 (python3 -m). This means that Python will treat the web_dynamic directory as a package and execute the 0-hbnb.py script within that package.
+
+![image](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/b8a475ca-be6b-4403-87de-e426a6c665ae)
+
+Environment variables for MySQL database connection are set.
+
+The Python script 0-hbnb is executed as a module using Python 3.
+
+Flask starts serving the application on port 5000.
+
+Requests are made to the server:
+
+A request to /0-hbnb/ returns a 200 response.
+
+Requests for static CSS files and images return 200 responses.
+
+Some image requests return 304 responses, indicating no modification since the last request.
+
+
+
+In another window if your terminal input this command: 
+```bash
+curl -s -XGET http://0.0.0.0:5000/0-hbnb/ | head -6
+```
+
+This command is using curl to make a GET request to a web server running locally on the address http://0.0.0.0:5000/0-hbnb/. 
+
+curl: This is a command-line tool for transferring data using various network protocols. It is commonly used to make HTTP requests.
+
+-s: This option instructs curl to operate in silent mode, where it suppresses the progress meter and other output. It makes curl run silently, without showing any progress or error messages.
+
+-XGET: This option specifies the HTTP method to be used in the request. In this case, it explicitly specifies that a GET request should be made. However, curl automatically uses GET requests if no method is specified, so this part is redundant but explicitly specifies the HTTP method.
+
+http://0.0.0.0:5000/0-hbnb/: This is the URL to which the GET request is made. It specifies the address 0.0.0.0 on port 5000, with the path /0-hbnb/. This would typically be the address of a web server running locally on the machine.
+
+|: This is a pipe operator that redirects the output of the command on the left side to the input of the command on the right side.
+
+head -6: This is a command that prints the first 6 lines of the input it receives. It's typically used to show only the beginning of a file or the output of a command when combined with the pipe operator |.
+
+![image](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/60b5466d-6ce4-42c1-8635-6abd5d02dd07)
+
+In your browser:
+```bash
+http://localhost:5000/0-hbnb/
+```
+![httplocalhost50000-hbnb](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/ebc0ce94-db22-4da9-a190-00e4438e717a)
+
+#### 1-hbnb.py, templates/1-hbnb.html, static/scripts/1-hbnb.js
+
+Input this command in your terminal:
+```bash
+HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db python3 -m web_dynamic.1-hbnb
+```
+
+In your browser:
+```bash
+http://localhost:5000/1-hbnb/
+```
+![clicking on amenities httplocalhost50001-hbnb](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/3f910ec8-ada4-4129-81df-0cd2f4575954)
+
 ### Authors
 Courtney Graham - [Github](https://github.com/grahacr)
 

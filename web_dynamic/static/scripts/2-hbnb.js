@@ -26,21 +26,19 @@ $(document).ready(() => {
     // Update the text of the h4 tag inside the div with class 'amenities'
     $('.amenities h4').text(updatedList);
   });
-  // store URL in variable
-  const url = 'http://0.0.0.0:5001/api/v1/status/';
-  $.get(url, function (data, status) {
-    // check if status of get function is success
-    if (status === 'success') {
-      // check if status of data retrieval is success
-      if (data.status === 'ok') {
-        // add class to api status
-        $('div#api_status').addClass('available');
-      } else {
-        // if status's are not ok, remove class
-        $('div#api_status').removeClass('available');
-      }
+
+  // Make a GET request to check API status
+  $.get('http://localhost:5001/api/v1/status/', (response) => {
+    // Check if the API status is "OK"
+    if (response.status === "OK") {
+      // If "OK", add the class 'available' to the div with id 'api_status'
+      $('div#api_status').addClass('available');
     } else {
+      // If not "OK", remove the class 'available' from the div with id 'api_status'
       $('div#api_status').removeClass('available');
     }
+  }).fail(() => {
+    // If the GET request fails, remove the class 'available' from the div with id 'api_status'
+    $('div#api_status').removeClass('available');
   });
 });

@@ -283,7 +283,7 @@ Some image requests return 304 responses, indicating no modification since the l
 
 
 
-**In another window if your terminal input this command: **
+**In another window if your terminal input this command:**
 
 ```bash
 curl -s -XGET http://0.0.0.0:5000/0-hbnb/ | head -6
@@ -328,6 +328,26 @@ http://localhost:5000/1-hbnb/
 ![clicking on amenities httplocalhost50001-hbnb](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/3f910ec8-ada4-4129-81df-0cd2f4575954)
 
 ![checking boxes](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/210232b5-9e1f-4f56-9d64-5ddfda9cb7ca)
+
+#### api/v1/app.py, web_dynamic/2-hbnb.py, web_dynamic/templates/2-hbnb.html, web_dynamic/static/styles/3-header.css, web_dynamic/static/scripts/2-hbnb.js
+
+**Input this command in your terminal:**
+```bash
+HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db python3 -m web_dynamic.2-hbnb
+```
+HBNB_MYSQL_USER=hbnb_dev: Sets the MySQL database username to hbnb_dev.
+
+HBNB_MYSQL_PWD=hbnb_dev_pwd: Sets the MySQL database password to hbnb_dev_pwd.
+
+HBNB_MYSQL_HOST=localhost: Sets the MySQL database host to localhost.
+
+HBNB_MYSQL_DB=hbnb_dev_db: Sets the MySQL database name to hbnb_dev_db.
+
+HBNB_TYPE_STORAGE=db: Sets the type of storage to use to db, which likely indicates that the application will use a MySQL database for storage.
+
+python3 -m web_dynamic.2-hbnb: Executes the Python script 2-hbnb.py located in the web_dynamic package/module using Python 3 as the interpreter. This script starts a Flask web application that serves the dynamic content for your application.
+
+![image](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/b611695d-75d8-40ca-a0f7-f54fb1c3f58b)
 
 ### Authors
 Courtney Graham - [Github](https://github.com/grahacr)

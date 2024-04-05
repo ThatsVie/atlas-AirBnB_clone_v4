@@ -303,7 +303,8 @@ http://0.0.0.0:5000/0-hbnb/: This is the URL to which the GET request is made. I
 
 head -6: This is a command that prints the first 6 lines of the input it receives. It's typically used to show only the beginning of a file or the output of a command when combined with the pipe operator |.
 
-![image](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/60b5466d-6ce4-42c1-8635-6abd5d02dd07)
+![image](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/21a9966f-ce05-4b3f-9ec4-ec2257fb71e1)
+
 
 **In your browser:**
 

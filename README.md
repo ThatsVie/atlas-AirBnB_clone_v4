@@ -738,7 +738,7 @@ The overall goal of this task is to load places dynamically from the front-end b
 
 To accomplish this in the file 3-hbnb.py, we changed the route from /2-hbnb to /3-hbnb, based on the existing 2-hbnb.py file.
 
-We created a new HTML template file named 3-hbnb.html based on the existing 2-hbnb.html. We updated the template by importing the JavaScript file static/scripts/3-hbnb.js in the <head> tag instead of 2-hbnb.js. We also removed the Jinja section responsible for displaying all places (all <article> tags).
+We created a new HTML template file named 3-hbnb.html based on the existing 2-hbnb.html. We updated the template by importing the JavaScript file static/scripts/3-hbnb.js in the <head> tag instead of 2-hbnb.js. We also removed the Jinja section responsible for displaying all places (all `article` tags).
 
 Next, we created a new JavaScript script named static/scripts/3-hbnb.js. This script is based on 2-hbnb.js. It makes a request to the API endpoint http://0.0.0.0:5001/api/v1/places_search/, which returns a list of places. The script sends a POST request with an empty dictionary in the body to this endpoint. Upon receiving the response, the script loops through the result and dynamically creates <article> tags representing each place in the section with the class places. The script excludes the Owner tag from the place description.
 

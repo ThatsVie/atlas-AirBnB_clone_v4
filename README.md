@@ -288,7 +288,37 @@ api/v1/app.py serves as the backend of the application, providing an API endpoin
 <li>web_dynamic/static/scripts/2-hbnb.js adds interactivity to the webpage, updating the list of selected amenities and checking the status of the API dynamically.</li>
 
 <li>Together, these files create a cohesive web application that allows users to interact with AirBnB data through a user-friendly interface while also providing real-time feedback on the status of the API.
+  
 </ul> </li> </details>
+
+<details>
+<summary>web_dynamic/3-hbnb.py, web_dynamic/templates/3-hbnb.html, web_dynamic/static/scripts/3-hbnb.js </summary>
+<ul>
+  <li>
+
+web_dynamic/3-hbnb.py sets up a Flask web application with a route that renders the 3-hbnb.html template. </li>
+
+<li>web_dynamic/templates/3-hbnb.html is the HTML template that defines the structure of the webpage and imports necessary CSS and JavaScript files. </li>
+
+<li>web_dynamic/static/scripts/3-hbnb.js is the JavaScript file that adds interactivity to the webpage, such as updating lists based on checkbox changes and retrieving and displaying places data dynamically.</li>
+
+<li>Together, these files create a dynamic web application where users can interact with data retrieved from the backend.
+
+</ul> </li></details>
+
+<details>
+<summary>web_dynamic/4-hbnb.py, web_dynamic/templates/4-hbnb.html, web_dynamic/static/scripts/4-hbnb.js </summary>
+<ul>
+  <li>
+  
+4-hbnb.py Initializes a Flask web application with a route /4-hbnb that renders 4-hbnb.html. Retrieves data from the database and passes it to the template.</li>
+
+<li>4-hbnb.html is the HTML template for the web page. iIt ncludes CSS and JavaScript files, sets up the layout, and dynamically populates content based on data passed from the backend.</li>
+
+<li>4-hbnb.js is the client-side JavaScript for the page. It handles checkbox changes, sends requests to check API status and retrieve places data, and dynamically updates the page based on user interactions.
+
+</ul> </li> </details>
+
 
 ### Detailed Summary and Usage
 
@@ -443,14 +473,13 @@ We replaced the existing route /0-hbnb with /1-hbnb in the Python script file (1
 
 We created a new HTML template named 1-hbnb.html based on the existing 0-hbnb.html template.
 
-
 We updated the HTML Template by:
 
-Importing JQuery and the JavaScript file static/scripts/1-hbnb.js in the <head> tag of 1-hbnb.html.
+Importing JQuery and the JavaScript file static/scripts/1-hbnb.js in the `head` tag of 1-hbnb.html.
 
-Appending the cache_id variable as a query string to the <script> tag.
+Appending the cache_id variable as a query string to the `script` tag.
 
-Adding a checkbox input (<input type="checkbox">) to each amenity (<li> tag).
+Adding a checkbox input (<input type="checkbox">) to each amenity (`li` tag).
 
 Positioning the checkbox 10px to the left of the Amenity name.
 
@@ -469,7 +498,7 @@ Listens for changes on each input checkbox tag:
 If the checkbox is checked, we store the Amenity ID in a variable
 If the checkbox is unchecked, we remove the Amenity ID from the variable.
 
-We also updated the <h4> tag inside the div Amenities with the list of Amenities checked.
+We also updated the `h4` tag inside the div Amenities with the list of Amenities checked.
 
 
 1-hbnb.py:
@@ -508,12 +537,13 @@ It listens for changes on each input checkbox tag (amenities).
 
 When a checkbox is checked or unchecked, it updates the checkedAmenities array accordingly.
 
-It then generates a comma-separated string of checked amenity names and updates the text of the <h4> tag inside the div with class amenities.
+It then generates a comma-separated string of checked amenity names and updates the text of the `h4` tag inside the div with class amenities.
 </ul>  </details>
 
 <details>
 <summary> Usage: </summary>
 <ul>
+  
 **Input this command in your terminal:**
 
 ```bash
@@ -536,6 +566,7 @@ http://localhost:5000/1-hbnb/
 <details>
 <summary> Summary: </summary>
 <ul>
+  
 Next we ensured that the HBNB web application and API were updated to handle status checks and served the correct template with necessary JavaScript functionality.
 
 We updated the API Entry Point:
@@ -607,6 +638,7 @@ It defines a route /2-hbnb that renders a template 2-hbnb.html.
 
 The purpose of this file is to define a route for the web application and render a specific HTML template.
 
+
 web_dynamic/templates/2-hbnb.html:
 
 This HTML file represents the template for the web application.
@@ -619,6 +651,7 @@ It also includes a <div> element with ID api_status in the header section.
 
 The purpose of this file is to define the layout and structure of the web page, including dynamic content.
 
+
 web_dynamic/static/styles/3-header.css:
 
 This CSS file contains styling rules for the header section of the web page.
@@ -628,6 +661,7 @@ It defines styles for the header, logo, and the newly added api_status div.
 The .available class is defined to set a specific background color for the api_status div when the API status is "OK".
 
 The purpose of this file is to define the visual appearance of elements in the header section of the webpage.
+
 
 web_dynamic/static/scripts/2-hbnb.js:
 
@@ -695,7 +729,67 @@ http://localhost:5000/2-hbnb
 
 </ul>  </details>
 
+#### web_dynamic/3-hbnb.py, web_dynamic/templates/3-hbnb.html, web_dynamic/static/scripts/3-hbnb.js
+<details>
+<summary> Summary: </summary>
+<ul>
+
+The overall goal of this task is to load places dynamically from the front-end by making a request to the specified API endpoint and displaying the retrieved data without relying on the back-end to render the places.
+
+To accomplish this in the file 3-hbnb.py, we changed the route from /2-hbnb to /3-hbnb, based on the existing 2-hbnb.py file.
+
+We created a new HTML template file named 3-hbnb.html based on the existing 2-hbnb.html. We updated the template by importing the JavaScript file static/scripts/3-hbnb.js in the <head> tag instead of 2-hbnb.js. We also removed the Jinja section responsible for displaying all places (all <article> tags).
+
+Next, we created a new JavaScript script named static/scripts/3-hbnb.js. This script is based on 2-hbnb.js. It makes a request to the API endpoint http://0.0.0.0:5001/api/v1/places_search/, which returns a list of places. The script sends a POST request with an empty dictionary in the body to this endpoint. Upon receiving the response, the script loops through the result and dynamically creates <article> tags representing each place in the section with the class places. The script excludes the Owner tag from the place description.
+
+
+web_dynamic/3-hbnb.py: This Python file sets up a Flask web application. It defines a route /3-hbnb that renders the template 3-hbnb.html. Inside the route function, it retrieves data from the database using SQLAlchemy and passes it to the template for rendering. The purpose of this file is to serve as the backend for the web application and handle HTTP requests.
+
+web_dynamic/templates/3-hbnb.html: This HTML file is a template for the web page served by the Flask application. It contains the structure of the webpage including header, filters, places, and footer sections. It imports the necessary CSS and JavaScript files and includes placeholders for dynamic content. The purpose of this file is to provide the structure and layout for the web page.
+
+web_dynamic/static/scripts/3-hbnb.js: This JavaScript file is responsible for adding interactivity to the webpage. It listens for changes on checkboxes, updates the list of checked amenities dynamically, checks the status of the API, and makes an AJAX request to retrieve places data from the backend. Upon receiving the places data, it dynamically generates HTML for each place and appends it to the appropriate section on the webpage. The purpose of this file is to enhance the user experience by adding dynamic content and interactions to the webpage.
+
+
+</ul>  </details>
+
+<details>
+<summary> Usage: </summary>
+<ul>
+
+
+  </ul>  </details>
+
+  
+#### web_dynamic/4-hbnb.py, web_dynamic/templates/4-hbnb.html, web_dynamic/static/scripts/4-hbnb.js
+<details>
+<summary> Summary: </summary>
+<ul>
+
+Next, we created 4-hbnb.py to replace the existing route 3-hbnb with 4-hbnb. 
+We created a new HTML template named 4-hbnb.html, based on the existing 3-hbnb.html. In the new HTML template, the JavaScript file 4-hbnb.js is imported instead of 3-hbnb.js.
+
+We created the JavaScript script 4-hbnb.js, building upon the functionality of 3-hbnb.js. When the button tag is clicked, a new POST request to places_search is made with the list of Amenities checked. This implementation completes the first filter and enhances the functionality of the web application.
+
+4-hbnb.py: This Python file initializes a Flask web application. It defines a route /4-hbnb that renders an HTML template named 4-hbnb.html. Inside the route function, it retrieves data from the database (states, amenities, places) and passes it to the HTML template for rendering.
+
+4-hbnb.html: This HTML file is the template for the web page rendered by the Flask application. It includes various CSS and JavaScript files, sets up the layout of the page with sections for filters and places, and dynamically populates content based on data passed from the Python file.
+
+4-hbnb.js: This JavaScript file contains client-side scripting for the web page. It initializes an array to store checked amenities, listens for changes on input checkboxes, sends a GET request to check the API status, and sends a POST request to retrieve places data. It dynamically generates HTML for each place and appends it to the appropriate section on the web page. Additionally, it listens for a click event on the search button and triggers a search function with the selected filters.
+
+These files work together to create a web application where users can view places and apply filters based on selected amenities. The Python file serves as the backend, handling routing and data retrieval, while the HTML and JavaScript files handle the frontend, defining the structure and behavior of the web page.
+
+
+</ul>  </details>
+
+  <details>
+<summary> Usage: </summary>
+<ul>
+
+
+  </ul>  </details>
+  
 ### Authors
+
 Courtney Graham - [Github](https://github.com/grahacr)
 
 Vie Paula - [Github](https://github.com/ThatsVie)

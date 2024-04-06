@@ -241,9 +241,124 @@ To view a README file for the Atlas AirBnb Clone v3 project please visit [this l
 
 ## AirBnb Clone v4 Web Dynamic
 
-### Usage
+### File Overview
+<details>
+<summary>web_dynamic/0-hbnb.py, web_dynamic/templates/0-hbnb.html, Static files, and Models </summary>
+<ul>
+  <li>
+    
+web_dynamic/0-hbnb.py is the main script that starts the Flask web application and defines the route to render the HTML template. </li>
 
-#### 0-hbnb.py, templates/0-hbnb.html
+<li>web_dynamic/templates/0-hbnb.html is the HTML template that provides the structure and content of the web page.</li>
+
+<li>Static files (CSS stylesheets, image assets) are used to style the web page.</li>
+
+<li>Models define the data structure and relationships used to retrieve data from the database.
+
+</ul> </li> </details>
+
+<details>
+<summary> web_dynamic/1-hbnb.py, web_dynamic/templates/1-hbnb.html, web_dynamic/static/scripts/1-hbnb.js  </summary>
+<ul>
+  <li>
+
+web_dynamic/1-hbnb.py is the Flask backend responsible for rendering the web page and providing data to populate it.</li>
+
+<li>web_dynamic/templates/1-hbnb.html is the HTML template that defines the structure and content of the web page. It imports JQuery and the JavaScript file 1-hbnb.js to add dynamic functionality.</li>
+
+<li>web_dynamic/static/scripts/1-hbnb.js is the JavaScript file that adds dynamic behavior to the web page, such as handling checkbox changes and updating the displayed amenities.</li>
+
+<li>Together, these files work to create a dynamic web page where users can interact with checkboxes to filter amenities, with the backend providing the necessary data.
+
+</ul> </li> </details>
+
+<details>
+<summary>api/v1/app.py, web_dynamic/2-hbnb.py, web_dynamic/templates/2-hbnb.html, web_dynamic/static/styles/3-headers.css, web_dynamic/static/scripts/2-hbnb.js </summary>
+<ul>
+  <li>
+    
+api/v1/app.py serves as the backend of the application, providing an API endpoint for accessing data related to the AirBnB service.</li>
+
+<li>web_dynamic/2-hbnb.py is the frontend of the application, serving HTML templates and handling user requests.</li>
+
+<li>web_dynamic/templates/2-hbnb.html defines the structure of the webpage and includes dynamic content placeholders.</li>
+
+<li>web_dynamic/static/styles/3-header.css styles the header section of the webpage, including the newly added API status indicator.</li>
+
+<li>web_dynamic/static/scripts/2-hbnb.js adds interactivity to the webpage, updating the list of selected amenities and checking the status of the API dynamically.</li>
+
+<li>Together, these files create a cohesive web application that allows users to interact with AirBnB data through a user-friendly interface while also providing real-time feedback on the status of the API.
+</ul> </li> </details>
+
+### Detailed Summary and Usage
+
+#### web_dynamic/0-hbnb.py, templates/0-hbnb.html, Static Files, Models
+<details>
+<summary>
+Summary: </summary>
+<ul>
+This project begins with creating a Flask web application based on existing files and making modifications to integrate asset caching.
+
+We copied the following files from the web_flask directory to the web_dynamic directory
+
+`static` directory
+`templates/100-hbnb.html`
+`__init__.py`
+`100-hbnb.py`
+
+We renamed `100-hbnb.py` to `0-hbnb.py` and `100-hbnb.html` to `0-hbnb.html.`
+
+We Modified `0-hbnb.py` to replace the existing route to /0-hbnb/. The new route serves 0-hbnb.html.
+
+We added a variable cache_id to the render_template function in 0-hbnb.py. The value of this variable is a UUID generated using uuid.uuid4()
+
+In 0-hbnb.html, we added this variable cache_id as a query string to each <link> tag URL.
+
+Files
+
+0-hbnb.py:
+
+This file is the main Python script that starts the Flask web application.
+
+It imports necessary modules from the Flask framework and the application's models.
+
+It defines a route /0-hbnb that renders the 0-hbnb.html template.
+
+Inside the route function, it retrieves data from the database (states, amenities, places) using the storage module.
+
+It generates a UUID (cache_id) for asset caching and passes it to the template.
+
+It starts the Flask application to run on 0.0.0.0:5000.
+
+0-hbnb.html:
+
+This HTML template is rendered by the Flask route defined in 0-hbnb.py.
+
+It contains the structure and layout of the web page, including headers, filters, places listing, and footer.
+
+It includes links to CSS stylesheets with query strings appended for asset caching using the cache_id variable.
+
+Static Files (`styles` directory, icon.png):
+
+These files contain CSS stylesheets and image assets used to style and enhance the appearance of the web page.
+
+The CSS stylesheets define the visual presentation of elements like headers, filters, places, etc.
+
+The icon.png file is used as the favicon for the web page.
+
+Models (State, City, Amenity, Place):
+
+These Python modules define the data models used in the application.
+
+They contain classes representing database tables (e.g., State, City) and their relationships.
+
+The models are used by 0-hbnb.py to retrieve data from the database.
+</ul> </li> </details>
+
+<details>
+<summary>Usage:</summary>
+<ul>
+  
 
 **Input this command in your terminal**
 
@@ -313,8 +428,92 @@ http://localhost:5000/0-hbnb/
 ```
 ![httplocalhost50000-hbnb](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/ebc0ce94-db22-4da9-a190-00e4438e717a)
 
-#### 1-hbnb.py, templates/1-hbnb.html, static/scripts/1-hbnb.js
+</ul>  </details>
 
+
+#### web_dynamic/1-hbnb.py, templates/1-hbnb.html, static/scripts/1-hbnb.js
+<details>
+<summary>
+Summary: </summary>
+<ul>
+Next, we enhanced the functionality of the Flask web application by making the filters section dynamic. The task involved updating the Flask route, creating a new HTML template with dynamic filtering functionality using checkboxes, and writing JavaScript code to handle the checkbox changes and update the displayed amenities accordingly.
+
+
+We replaced the existing route /0-hbnb with /1-hbnb in the Python script file (1-hbnb.py).
+
+We created a new HTML template named 1-hbnb.html based on the existing 0-hbnb.html template.
+
+
+We updated the HTML Template by:
+
+Importing JQuery and the JavaScript file static/scripts/1-hbnb.js in the <head> tag of 1-hbnb.html.
+
+Appending the cache_id variable as a query string to the <script> tag.
+
+Adding a checkbox input (<input type="checkbox">) to each amenity (<li> tag).
+
+Positioning the checkbox 10px to the left of the Amenity name.
+
+Adding two attributes to the checkbox input:
+
+data-id=":amenity_id": This attribute stores the Amenity ID, allowing retrieval from the DOM.
+data-name=":amenity_name": This attribute stores the Amenity name, allowing retrieval from the DOM.
+
+We wrote static/scripts/1-hbnb.js:
+
+The script only executes when the DOM is fully loaded.
+JQuery is used for DOM manipulation.
+
+Listens for changes on each input checkbox tag:
+
+If the checkbox is checked, we store the Amenity ID in a variable
+If the checkbox is unchecked, we remove the Amenity ID from the variable.
+
+We also updated the <h4> tag inside the div Amenities with the list of Amenities checked.
+
+
+1-hbnb.py:
+
+This Python script starts a Flask web application.
+
+It imports necessary modules and defines routes.
+
+The route /1-hbnb renders the 1-hbnb.html template.
+
+Inside the route function hbnb(), data for states, amenities, and places are fetched from the database using the storage module.
+
+A unique cache_id is generated using uuid.uuid4() to prevent asset caching.
+
+It renders the 1-hbnb.html template with the retrieved data and cache_id.
+
+1-hbnb.html:
+
+This HTML template defines the structure of the web page.
+
+It imports necessary CSS stylesheets with cache IDs to prevent caching.
+
+JQuery and the JavaScript file 1-hbnb.js are imported to add dynamic functionality.
+
+The template contains sections for filters, amenities, places, and a footer.
+
+It dynamically generates lists of states, amenities, and places fetched from the Flask route.
+
+Checkboxes for amenities are added dynamically with data attributes (data-id and data-name) for each amenity.
+
+1-hbnb.js:
+
+This JavaScript file adds dynamic functionality to the web page using JQuery.
+
+It listens for changes on each input checkbox tag (amenities).
+
+When a checkbox is checked or unchecked, it updates the checkedAmenities array accordingly.
+
+It then generates a comma-separated string of checked amenity names and updates the text of the <h4> tag inside the div with class amenities.
+</ul>  </details>
+
+<details>
+<summary> Usage: </summary>
+<ul>
 **Input this command in your terminal:**
 
 ```bash
@@ -330,7 +529,123 @@ http://localhost:5000/1-hbnb/
 
 ![checking boxes](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/210232b5-9e1f-4f56-9d64-5ddfda9cb7ca)
 
+</ul>  </details>
+
 #### api/v1/app.py, web_dynamic/2-hbnb.py, web_dynamic/templates/2-hbnb.html, web_dynamic/static/styles/3-header.css, web_dynamic/static/scripts/2-hbnb.js
+
+<details>
+<summary> Summary: </summary>
+<ul>
+Next we ensured that the HBNB web application and API were updated to handle status checks and served the correct template with necessary JavaScript functionality.
+
+We updated the API Entry Point:
+
+In the api/v1/app.py file, we replaced CORS(app, origins="0.0.0.0") with CORS(app, resources={r"/api/v1/*": {"origins": "*"}}).
+
+This change allows requests from any origin to access the API, specifically targeting routes under /api/v1/.
+
+
+In the 2-hbnb.py file (based on 1-hbnb.py), we changed the route from /1-hbnb to /2-hbnb.
+
+This ensures that the web application serves the new template 2-hbnb.html under the updated route.
+
+
+We created a new HTML template 2-hbnb.html based on the existing 1-hbnb.html.
+
+Imported the JavaScript file 2-hbnb.js in the <head> tag instead of 1-hbnb.js.
+
+Added a new <div> element in the header tag with specific attributes:
+
+ID is api_status.
+
+Aligned to the right.
+
+Circular shape with a diameter of 40px.
+
+Vertically centered.
+
+Positioned 30px from the right border.
+
+Background color is #cccccc.
+
+We also added a CSS class named available for this new element in web_dynamic/static/styles/3-header.css. This class has a background color of #ff545f.
+
+We created a new JavaScript file named 2-hbnb.js based on 1-hbnb.js.
+
+This script makes an HTTP request to http://0.0.0.0:5001/api/v1/status/ to check the status of the HBNB API.
+
+If the status is "OK", it adds the class available to the <div> element with ID api_status.
+
+If the status is not "OK", it removes the class available from the <div> element with ID api_status.
+
+
+
+api/v1/app.py:
+
+This file is the main entry point for the Flask application that serves the HBNB API.
+
+It imports necessary modules and initializes Flask, CORS, and Swagger.
+
+The teardown_appcontext function closes the SQLAlchemy session when the application context is popped.
+
+An error handler is defined for 404 errors, returning a JSON response.
+
+It starts the Flask application, configuring the host and port based on environment variables.
+
+The purpose of this file is to configure the Flask application, define routes, and handle errors for the API.
+
+
+web_dynamic/2-hbnb.py:
+
+This file is a Flask web application script.
+
+It imports necessary modules and initializes Flask.
+
+The teardown_appcontext function closes the SQLAlchemy session when the application context is popped.
+
+It defines a route /2-hbnb that renders a template 2-hbnb.html.
+
+The purpose of this file is to define a route for the web application and render a specific HTML template.
+
+web_dynamic/templates/2-hbnb.html:
+
+This HTML file represents the template for the web application.
+
+It imports necessary CSS and JavaScript files and sets up the structure of the webpage.
+
+The template includes placeholders for states, amenities, and places data to be rendered dynamically.
+
+It also includes a <div> element with ID api_status in the header section.
+
+The purpose of this file is to define the layout and structure of the web page, including dynamic content.
+
+web_dynamic/static/styles/3-header.css:
+
+This CSS file contains styling rules for the header section of the web page.
+
+It defines styles for the header, logo, and the newly added api_status div.
+
+The .available class is defined to set a specific background color for the api_status div when the API status is "OK".
+
+The purpose of this file is to define the visual appearance of elements in the header section of the webpage.
+
+web_dynamic/static/scripts/2-hbnb.js:
+
+This JavaScript file contains client-side scripting logic for the web page.
+
+It listens for changes on input checkboxes for amenities and updates the list of selected amenities dynamically.
+
+It also makes an AJAX request to the API to check the status and updates the visual indicator (api_status) based on the response.
+
+The purpose of this file is to add interactivity to the webpage and handle API status checks dynamically.
+
+These files collectively define and implement the functionality of the HBNB web application and API, ensuring proper rendering of dynamic content and handling of API status checks.
+
+</ul>  </details>
+
+<details>
+<summary> Usage: </summary>
+<ul>
 
 **Input this command in your terminal:**
 ```bash
@@ -378,7 +693,7 @@ http://localhost:5000/2-hbnb
 
 ![httplocalhost50002-hbnb](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/0c3c9122-e7a8-4d1a-851d-552c7710b26f)
 
-
+</ul>  </details>
 
 ### Authors
 Courtney Graham - [Github](https://github.com/grahacr)

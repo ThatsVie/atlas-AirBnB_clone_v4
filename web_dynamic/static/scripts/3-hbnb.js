@@ -45,7 +45,7 @@ $(document).ready(() => {
     // Make an AJAX request to retrieve places data
     $.ajax({
         // URL of the API endpoint for places search
-        url: ':5001/api/v1/places_search/',
+        url: 'http://localhost:5001/api/v1/places_search/',
         // HTTP method type
         type: 'POST',
         // Expected data type of the response

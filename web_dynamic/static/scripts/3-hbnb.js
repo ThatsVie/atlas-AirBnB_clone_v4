@@ -45,7 +45,7 @@ $(document).ready(() => {
     // Make an AJAX request to retrieve places data
     $.ajax({
         // URL of the API endpoint for places search
-        url: baseUrl + ':5001/api/v1/places_search/',
+        url: ':5001/api/v1/places_search/',
         // HTTP method type
         type: 'POST',
         // Expected data type of the response
@@ -53,7 +53,7 @@ $(document).ready(() => {
         // Content type of the request body
         contentType: 'application/json',
         // Data to be sent in the request body
-        data: JSON.stringify({}),
+        data: '{}',
         // Callback function to handle successful response
         success: function (data) {
             // Append each place to the section.places element

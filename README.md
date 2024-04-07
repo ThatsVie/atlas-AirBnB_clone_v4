@@ -583,9 +583,9 @@ This ensures that the web application serves the new template 2-hbnb.html under 
 
 We created a new HTML template 2-hbnb.html based on the existing 1-hbnb.html.
 
-Imported the JavaScript file 2-hbnb.js in the <head> tag instead of 1-hbnb.js.
+Imported the JavaScript file 2-hbnb.js in the `head` tag instead of 1-hbnb.js.
 
-Added a new <div> element in the header tag with specific attributes:
+Added a new `div` element in the header tag with specific attributes:
 
 ID is api_status.
 
@@ -605,9 +605,9 @@ We created a new JavaScript file named 2-hbnb.js based on 1-hbnb.js.
 
 This script makes an HTTP request to http://0.0.0.0:5001/api/v1/status/ to check the status of the HBNB API.
 
-If the status is "OK", it adds the class available to the <div> element with ID api_status.
+If the status is "OK", it adds the class available to the `div` element with ID api_status.
 
-If the status is not "OK", it removes the class available from the <div> element with ID api_status.
+If the status is not "OK", it removes the class available from the `div` element with ID api_status.
 
 
 
@@ -738,9 +738,9 @@ The overall goal of this task is to load places dynamically from the front-end b
 
 To accomplish this in the file 3-hbnb.py, we changed the route from /2-hbnb to /3-hbnb, based on the existing 2-hbnb.py file.
 
-We created a new HTML template file named 3-hbnb.html based on the existing 2-hbnb.html. We updated the template by importing the JavaScript file static/scripts/3-hbnb.js in the <head> tag instead of 2-hbnb.js. We also removed the Jinja section responsible for displaying all places (all `article` tags).
+We created a new HTML template file named 3-hbnb.html based on the existing 2-hbnb.html. We updated the template by importing the JavaScript file static/scripts/3-hbnb.js in the `head` tag instead of 2-hbnb.js. We also removed the Jinja section responsible for displaying all places (all `article` tags).
 
-Next, we created a new JavaScript script named static/scripts/3-hbnb.js. This script is based on 2-hbnb.js. It makes a request to the API endpoint http://0.0.0.0:5001/api/v1/places_search/, which returns a list of places. The script sends a POST request with an empty dictionary in the body to this endpoint. Upon receiving the response, the script loops through the result and dynamically creates <article> tags representing each place in the section with the class places. The script excludes the Owner tag from the place description.
+Next, we created a new JavaScript script named static/scripts/3-hbnb.js. This script is based on 2-hbnb.js. It makes a request to the API endpoint http://0.0.0.0:5001/api/v1/places_search/, which returns a list of places. The script sends a POST request with an empty dictionary in the body to this endpoint. Upon receiving the response, the script loops through the result and dynamically creates `article` tags representing each place in the section with the class places. The script excludes the Owner tag from the place description.
 
 
 web_dynamic/3-hbnb.py: This Python file sets up a Flask web application. It defines a route /3-hbnb that renders the template 3-hbnb.html. Inside the route function, it retrieves data from the database using SQLAlchemy and passes it to the template for rendering. The purpose of this file is to serve as the backend for the web application and handle HTTP requests.

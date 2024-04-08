@@ -1,90 +1,71 @@
 // Execute the script when the DOM is fully loaded
-$(document).ready(() => {
-    // Initialize an empty array to store checked amenities
-    let checkedAmenities = [];
+$(document).ready(function () {
+    // Object to store the names of checked amenities with their IDs
+    const checkedAmenities = {};
 
-    // Listen for changes on each input checkbox tag
-    $('input[type="checkbox"]').change(function () {
-        // Get the Amenity ID and Name from the data attributes of the checkbox
-        const amenityData = {
-            id: $(this).data('id'),
-            name: $(this).data('name')
-        };
-
+    // Event listener for checkbox clicks
+    $('input:checkbox').click(function () {
         // Check if the checkbox is checked
-        if (this.checked) {
-            // If checked, add the Amenity ID and Name to the checkedAmenities array
-            checkedAmenities.push(amenityData);
+        if ($(this).is(":checked")) {
+            // Add the amenity to the checkedAmenities object
+            checkedAmenities[$(this).attr('data-id')] = $(this).attr('data-name');
         } else {
-            // If unchecked, remove the Amenity ID and Name from the checkedAmenities array
-            checkedAmenities = checkedAmenities.filter(amenity => amenity.id !== amenityData.id);
+            // Remove the amenity from the checkedAmenities object
+            delete checkedAmenities[$(this).attr('data-id')];
         }
 
-        // Create a comma-separated string of checked amenity names
-        const updatedList = checkedAmenities.map(amenity => amenity.name).join(', ');
-
         // Update the text of the h4 tag inside the div with class 'amenities'
-        $('.amenities h4').text(updatedList);
+        $('.amenities h4').text(Object.values(checkedAmenities).join(', '));
     });
 
     // Make a GET request to check API status
-    $.get('http://localhost:5001/api/v1/status/', (response) => {
-        // Check if the API status is "OK"
-        if (response.status === "OK") {
-            // If "OK", add the class 'available' to the div with id 'api_status'
-            $('div#api_status').addClass('available');
+    $.get("http://localhost:5001/api/v1/status/", function (response) {
+        // Check if the API status is "OK" and update the status indicator
+        if (response.status == "OK") {
+            $('DIV#api_status').addClass("available");
         } else {
-            // If not "OK", remove the class 'available' from the div with id 'api_status'
-            $('div#api_status').removeClass('available');
-        }
-    }).fail(() => {
-        // If the GET request fails, remove the class 'available' from the div with id 'api_status'
-        $('div#api_status').removeClass('available');
-    });
-
-    // Make an AJAX request to retrieve places data
-    $.ajax({
-        // URL of the API endpoint for places search
-        url: 'http://localhost:5001/api/v1/places_search/',
-        // HTTP method type
-        type: 'POST',
-        // Expected data type of the response
-        dataType: 'json',
-        // Content type of the request body
-        contentType: 'application/json',
-        // Data to be sent in the request body
-        data: '{}',
-        // Callback function to handle successful response
-        success: function (data) {
-            // Append each place to the section.places element
-            $('SECTION.places').append(data.map(place => {
-                // Create HTML markup for each place
-                return `<article>
-                    <div class="title_box">
-                        <h2>${ place.name }</h2>
-                        <div class="price_by_night">\$${place.price_by_night}</div>
-                    </div>
-                    <div class="information">
-                        <div class="max_guest">${place.max_guest} Guests</div>
-                        <div class="number_rooms">${place.number_rooms} Bedrooms</div>
-                        <div class="number_bathrooms">${place.number_bathrooms} Bathrooms</div>
-                    </div>
-                    <div class="description">
-                        ${place.description}
-                    </div>
-                </article>`;
-            }))
+            $('DIV#api_status').removeClass("available");
         }
     });
 
-    // Listen for click event on button tag
+    // Function to perform a search with given filters
+    const performSearch = function (filters = {}) {
+        $.ajax({
+            type: 'POST',
+            url: 'http://localhost:5001/api/v1/places_search',
+            data: JSON.stringify(filters),
+            contentType: 'application/json',
+            success: function (data) {
+                // Clear existing places and append new places
+                $('SECTION.places').empty();
+                $('SECTION.places').append(data.map(place => {
+                    return `<article>
+                                <div class="title_box">
+                                    <h2>${place.name}</h2>
+                                    <div class="price_by_night">${place.price_by_night}</div>
+                                </div>
+                                <div class="information">
+                                    <div class="max_guest">${place.max_guest} Guests</div>
+                                    <div class="number_rooms">${place.number_rooms} Bedrooms</div>
+                                    <div class="number_bathrooms">${place.number_bathrooms} Bathrooms</div>
+                                </div>
+                                <div class="description">
+                                    ${place.description}
+                                </div>
+                            </article>`;
+                }));
+            }
+        });
+    };
+
+    // Event listener for the search button click
     $('#search').click(function () {
         // Prepare filters object with checked amenities
-        const filters = { amenities: checkedAmenities };
-        // Call the search function with filters
-        search(filters);
+        const filters = { amenities: Object.keys(checkedAmenities) };
+        // Call the performSearch function with filters
+        performSearch(filters);
     });
 
-    // Initial search without any filters
-    search({});
+    // Perform an initial search without any filters
+    performSearch();
 });

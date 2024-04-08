@@ -749,7 +749,7 @@ http://localhost:5000/2-hbnb
 
 ![httplocalhost50002-hbnb](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/0c3c9122-e7a8-4d1a-851d-552c7710b26f)
 
-**After the API is connected. Note tha tthe circle is now red**
+**After the API is connected. Note that the circle is now red**
 
 ![API connected OK red circle](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/e5d455db-61e6-4790-b169-2b5f9c084d8c)
 
@@ -767,7 +767,7 @@ To accomplish this in the file 3-hbnb.py, we changed the route from /2-hbnb to /
 
 We created a new HTML template file named 3-hbnb.html based on the existing 2-hbnb.html. We updated the template by importing the JavaScript file static/scripts/3-hbnb.js in the `head` tag instead of 2-hbnb.js. We also removed the Jinja section responsible for displaying all places (all `article` tags).
 
-Next, we created a new JavaScript script named static/scripts/3-hbnb.js. This script is based on 2-hbnb.js. It makes a request to the API endpoint http://0.0.0.0:5001/api/v1/places_search/, which returns a list of places. The script sends a POST request with an empty dictionary in the body to this endpoint. Upon receiving the response, the script loops through the result and dynamically creates `article` tags representing each place in the section with the class places. The script excludes the Owner tag from the place description.
+Next, we created a new JavaScript script named static/scripts/3-hbnb.js. This script is based on 2-hbnb.js. It makes a request to the API endpoint http://localhost:5001/api/v1/places_search/, which returns a list of places. The script sends a POST request with an empty dictionary in the body to this endpoint. Upon receiving the response, the script loops through the result and dynamically creates `article` tags representing each place in the section with the class places. The script excludes the Owner tag from the place description.
 
 
 web_dynamic/3-hbnb.py: This Python file sets up a Flask web application. It defines a route /3-hbnb that renders the template 3-hbnb.html. Inside the route function, it retrieves data from the database using SQLAlchemy and passes it to the template for rendering. The purpose of this file is to serve as the backend for the web application and handle HTTP requests.
@@ -783,6 +783,26 @@ web_dynamic/static/scripts/3-hbnb.js: This JavaScript file is responsible for ad
 <summary> Usage: </summary>
 <ul>
 
+**Start the API server:**
+
+```bash
+HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db HBNB_API_PORT=5001 python3 -m api.v1.app
+```
+
+**In another window of your terminal run the web application server:**
+```bash
+HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db python3 -m web_dynamic.3-hbnb
+```
+
+![image](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/f976900e-93d5-491c-8bdb-b2c57b8a5a03)
+
+
+**In your browser:**
+```bash
+http://localhost:5000/3-hbnb
+```
+
+![The final result must be the same as previously, but now, places are loaded from the front-end, not from the back-end!](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/a339cab8-81dc-44fb-991c-f61c4fe94726)
 
   </ul>  </details>
 
@@ -812,6 +832,26 @@ These files work together to create a web application where users can view place
 <summary> Usage: </summary>
 <ul>
 
+**Start the API server:**
+
+```bash
+HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db HBNB_API_PORT=5001 python3 -m api.v1.app
+```
+
+**In another window of your terminal run the web application server:**
+
+```bash
+HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db python3 -m web_dynamic.4-hbnb
+```
+
+![image](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/65113b67-7e77-48f1-a983-79316bf4f73f)
+
+
+**In your browser:**
+
+```bash
+http://localhost:5000/4-hbnb
+```
 
   </ul>  </details>
   

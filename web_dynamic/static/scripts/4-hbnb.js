@@ -19,9 +19,9 @@ $(document).ready(function () {
     });
 
     // Make a GET request to check API status
-    $.get("http://localhost:5001/api/v1/status/", function (data) {
+    $.get("http://localhost:5001/api/v1/status/", function (response) {
         // Check if the API status is "OK" and update the status indicator
-        if (data.status == "OK") {
+        if (response.status == "OK") {
             $('DIV#api_status').addClass("available");
         } else {
             $('DIV#api_status').removeClass("available");

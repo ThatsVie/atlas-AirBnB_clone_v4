@@ -843,8 +843,8 @@ HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost H
 ```bash
 HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db python3 -m web_dynamic.4-hbnb
 ```
+![image](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/0bb185b2-6bda-4443-adf9-9b249645b18a)
 
-![image](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/65113b67-7e77-48f1-a983-79316bf4f73f)
 
 
 **In your browser:**
@@ -852,6 +852,19 @@ HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost H
 ```bash
 http://localhost:5000/4-hbnb
 ```
+
+**Before filtering ameneties:**
+
+![before amenities filter](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/6e2e6461-e3c4-4216-8bcc-3aca9b2c467e)
+
+**After filtering amenities:**
+
+![amenities filtered by AC cable and dogs](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/df948fc1-5cdb-47d5-9714-b0676aef6a9b)
+
+**View of API log after filtering amenities:**
+
+![image](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/3ba2761a-5ca6-47bd-85b7-a451fdcd0fba)
+
 
   </ul>  </details>
   

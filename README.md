@@ -739,8 +739,13 @@ The subsequent lines show GET requests being made to various static resources (C
 ```bash
 http://localhost:5000/2-hbnb
 ```
+**This is before the API is connected. Note the gray circle in the top right**
 
 ![httplocalhost50002-hbnb](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/0c3c9122-e7a8-4d1a-851d-552c7710b26f)
+
+**After the API is connected. Note tha tthe circle is now red!**
+
+![api working red circle](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/64756c4f-c72a-4bfe-b9a9-254f2577fb24)
 
 </ul>  </details>
 

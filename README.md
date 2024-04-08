@@ -325,35 +325,38 @@ web_dynamic/3-hbnb.py sets up a Flask web application with a route that renders 
 <details>
 <summary>
 Summary: </summary>
-<ul>
-This project begins with creating a Flask web application based on existing files and making modifications to integrate asset caching.
-
-We copied the following files from the web_flask directory to the web_dynamic directory
-
-`static` directory
-`templates/100-hbnb.html`
-`__init__.py`
-`100-hbnb.py`
-
-We renamed `100-hbnb.py` to `0-hbnb.py` and `100-hbnb.html` to `0-hbnb.html.`
-
-We Modified `0-hbnb.py` to replace the existing route to /0-hbnb/. The new route serves 0-hbnb.html.
+<ol>
+  <li> First, the project begins with creating a Flask web application based on existing files and making modifications to integrate asset caching.</li>
+  <li> Then, we copied the following files from the web_flask directory to the web_dynamic directory
+    <ul>
+      <li>
+        <p><code>static</code> directory</p>
+      </li>
+      <li>
+        <p><code>templates/100-hbnb.html</code></p>
+      </li>
+      <li>
+        <p><code>__init__.py</code></p>
+      </li>
+      <li>
+        <p><code>100-hbnb.py</code></p>
+      </li>
+    </ul>
+  <li>We renamed <code>100-hbnb.py</code> to <code>0-hbnb.py</code> and <code>100-hbnb.html</code> to <code>0-hbnb.html.</code>
+  <li>We Modified `0-hbnb.py` to replace the existing route to /0-hbnb/. The new route serves 0-hbnb.html.
 
 We added a variable cache_id to the render_template function in 0-hbnb.py. The value of this variable is a UUID generated using uuid.uuid4()
 
 In 0-hbnb.html, we added this variable cache_id as a query string to each <link> tag URL.
 
-Files
+### Files
 
 0-hbnb.py:
 
-This file is the main Python script that starts the Flask web application.
-
-It imports necessary modules from the Flask framework and the application's models.
-
-It defines a route /0-hbnb that renders the 0-hbnb.html template.
-
-Inside the route function, it retrieves data from the database (states, amenities, places) using the storage module.
+- main Python script, starts the Flask web application.
+- imports necessary modules from the Flask framework and the application's models.
+- defines route /0-hbnb which renders 0-hbnb.html template.
+- Inside route function, retrieve data from the database (states, amenities, places) using storage module.
 
 It generates a UUID (cache_id) for asset caching and passes it to the template.
 

@@ -743,9 +743,10 @@ http://localhost:5000/2-hbnb
 
 ![httplocalhost50002-hbnb](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/0c3c9122-e7a8-4d1a-851d-552c7710b26f)
 
-**After the API is connected. Note tha tthe circle is now red!**
+**After the API is connected. Note tha tthe circle is now red**
 
-![api working red circle](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/64756c4f-c72a-4bfe-b9a9-254f2577fb24)
+![API connected OK red circle](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/e5d455db-61e6-4790-b169-2b5f9c084d8c)
+
 
 </ul>  </details>
 

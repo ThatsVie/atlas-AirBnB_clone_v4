@@ -243,34 +243,33 @@ To view a README file for the Atlas AirBnb Clone v3 project please visit [this l
 
 ### File Overview
 <details>
-<summary>web_dynamic/0-hbnb.py, web_dynamic/templates/0-hbnb.html, Static files, and Models </summary>
+<summary><i>web_dynamic/0-hbnb.py, web_dynamic/templates/0-hbnb.html, Static files, and Models </i></summary>
 <ul>
-  <li>
-    
-web_dynamic/0-hbnb.py is the main script that starts the Flask web application and defines the route to render the HTML template. </li>
+  <li><sub>
+    web_dynamic/0-hbnb.py is the main script that starts the Flask web application and defines the route to render the HTML template.</sub></li>
 
-<li>web_dynamic/templates/0-hbnb.html is the HTML template that provides the structure and content of the web page.</li>
+<li><sub>web_dynamic/templates/0-hbnb.html is the HTML template that provides the structure and content of the web page.</sub></li>
 
-<li>Static files (CSS stylesheets, image assets) are used to style the web page.</li>
+<li><sub>Static files (CSS stylesheets, image assets) are used to style the web page.</sub></li>
 
-<li>Models define the data structure and relationships used to retrieve data from the database.
-
-</ul> </li> </details>
+<li><sub>Models define the data structure and relationships used to retrieve data from the database.</sub></li>
+</ul>
+</details>
 
 <details>
-<summary> web_dynamic/1-hbnb.py, web_dynamic/templates/1-hbnb.html, web_dynamic/static/scripts/1-hbnb.js  </summary>
+<summary><i>web_dynamic/1-hbnb.py, web_dynamic/templates/1-hbnb.html, web_dynamic/static/scripts/1-hbnb.js  </i></summary>
 <ul>
-  <li>
+  <li><sub>
 
-web_dynamic/1-hbnb.py is the Flask backend responsible for rendering the web page and providing data to populate it.</li>
+web_dynamic/1-hbnb.py is the Flask backend responsible for rendering the web page and providing data to populate it.</sub></li>
 
-<li>web_dynamic/templates/1-hbnb.html is the HTML template that defines the structure and content of the web page. It imports JQuery and the JavaScript file 1-hbnb.js to add dynamic functionality.</li>
+<li><sub>web_dynamic/templates/1-hbnb.html is the HTML template that defines the structure and content of the web page. It imports JQuery and the JavaScript file 1-hbnb.js to add dynamic functionality.</sub></li>
 
-<li>web_dynamic/static/scripts/1-hbnb.js is the JavaScript file that adds dynamic behavior to the web page, such as handling checkbox changes and updating the displayed amenities.</li>
+<li><sub>web_dynamic/static/scripts/1-hbnb.js is the JavaScript file that adds dynamic behavior to the web page, such as handling checkbox changes and updating the displayed amenities.</sub></li>
 
-<li>Together, these files work to create a dynamic web page where users can interact with checkboxes to filter amenities, with the backend providing the necessary data.
+<li><sub>Together, these files work to create a dynamic web page where users can interact with checkboxes to filter amenities, while the backend provides the necessary data.</sub></li>
 
-</ul> </li> </details>
+</ul></details>
 
 <details>
 <summary>api/v1/app.py, web_dynamic/2-hbnb.py, web_dynamic/templates/2-hbnb.html, web_dynamic/static/styles/3-headers.css, web_dynamic/static/scripts/2-hbnb.js </summary>

@@ -603,13 +603,19 @@ We also added a CSS class named available for this new element in web_dynamic/st
 
 We created a new JavaScript file named 2-hbnb.js based on 1-hbnb.js.
 
-This script makes an HTTP request to http://0.0.0.0:5001/api/v1/status/ to check the status of the HBNB API.
+This script makes an HTTP request to http://localhost:5001/api/v1/status/ to check the status of the HBNB API.
 
 If the status is "OK", it adds the class available to the `div` element with ID api_status.
 
 If the status is not "OK", it removes the class available from the `div` element with ID api_status.
 
+**Note:**
 
+Using http://localhost:5001/api/v1/status/ explicitly specifies the loopback address, ensuring a connection to the local machine. This is universally supported and commonly used in development environments.
+
+However, http://0.0.0.0:5001/api/v1/status/ (as the task requires) specifies the wildcard address, which means "any available interface." Some systems or configurations may not allow connections to this address, leading to potential issues with connectivity, especially in development environments.
+
+This project was developed on VSCode with Liver Server.
 
 api/v1/app.py:
 

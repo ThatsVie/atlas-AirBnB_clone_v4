@@ -319,12 +319,12 @@ web_dynamic/3-hbnb.py sets up a Flask web application with a route that renders 
 </ul></details>
 
 
-### Detailed Summary and Usage
+### Detailed Task Summary and Usage
 
 #### web_dynamic/0-hbnb.py, templates/0-hbnb.html, Static Files, Models
 <details>
 <summary>
-Summary: </summary>
+Task Summary: </summary>
 <ol>
   <li> First, the project begins with creating a Flask web application based on existing files and making modifications to integrate asset caching.</li>
   <li> Then, we copied the following files from the web_flask directory to the web_dynamic directory
@@ -342,12 +342,11 @@ Summary: </summary>
         <p><code>100-hbnb.py</code></p>
       </li>
     </ul>
-  <li>We renamed <code>100-hbnb.py</code> to <code>0-hbnb.py</code> and <code>100-hbnb.html</code> to <code>0-hbnb.html.</code>
-  <li>We Modified `0-hbnb.py` to replace the existing route to /0-hbnb/. The new route serves 0-hbnb.html.
-
-We added a variable cache_id to the render_template function in 0-hbnb.py. The value of this variable is a UUID generated using uuid.uuid4()
-
-In 0-hbnb.html, we added this variable cache_id as a query string to each <link> tag URL.
+  <li>Renamed files: <code>100-hbnb.py</code> => <code>0-hbnb.py</code> and <code>100-hbnb.html</code> => <code>0-hbnb.html.</code>
+  <li>Modified <code>0-hbnb.py</code> to replace the existing route to /0-hbnb/. The new route serves 0-hbnb.html.</li>
+  <li>Added <code>cache_id</code> variable to the <code>render_template</code> function in 0-hbnb.py. Value of this variable is a UUID generated using uuid.uuid4()</li>
+  <li>Finally, implemented variable <code>cache_id</code> into 0-hbnb.html as a query string to each <link> tag URL.</li>
+</ol>
 
 ### Files
 
@@ -355,37 +354,27 @@ In 0-hbnb.html, we added this variable cache_id as a query string to each <link>
 
 - main Python script, starts the Flask web application.
 - imports necessary modules from the Flask framework and the application's models.
-- defines route /0-hbnb which renders 0-hbnb.html template.
-- Inside route function, retrieve data from the database (states, amenities, places) using storage module.
-
-It generates a UUID (cache_id) for asset caching and passes it to the template.
-
-It starts the Flask application to run on 0.0.0.0:5000.
+- defines route <code>/0-hbnb</code> which renders 0-hbnb.html template.
+- Inside route function, retrieves data from the database (states, amenities, places) using storage module.
+- generates a UUID (cache_id) for asset caching and passes it to the template.
+- starts the Flask application to run on 0.0.0.0:5000.
 
 0-hbnb.html:
 
-This HTML template is rendered by the Flask route defined in 0-hbnb.py.
-
-It contains the structure and layout of the web page, including headers, filters, places listing, and footer.
-
-It includes links to CSS stylesheets with query strings appended for asset caching using the cache_id variable.
+- the HTML template rendered by the Flask route defined in 0-hbnb.py.
+- contains structure and layout of the web page, including headers, filters, places listing, and footer.
+- includes links to CSS stylesheets with query strings appended for asset caching using the <code> cache_id </code> variable.
 
 Static Files (`styles` directory, icon.png):
-
-These files contain CSS stylesheets and image assets used to style and enhance the appearance of the web page.
-
-The CSS stylesheets define the visual presentation of elements like headers, filters, places, etc.
-
-The icon.png file is used as the favicon for the web page.
+- These files contain CSS stylesheets and image assets used to style and enhance the appearance of the web page.
+    - CSS stylesheets define the visual presentation of elements like headers, filters, places, etc.
+    - <code>icon.png</code> file is used as the favicon for the web page.
 
 Models (State, City, Amenity, Place):
-
-These Python modules define the data models used in the application.
-
-They contain classes representing database tables (e.g., State, City) and their relationships.
-
-The models are used by 0-hbnb.py to retrieve data from the database.
-</ul> </li> </details>
+- Python modules defining the data models used in the application.
+  - modules contain classes representing database tables (e.g., State, City) and their relationships.
+- models are used by <code>0-hbnb.py</code> to retrieve data from the database.
+</ul> </details>
 
 <details>
 <summary>Usage:</summary>
@@ -466,42 +455,37 @@ http://localhost:5000/0-hbnb/
 #### web_dynamic/1-hbnb.py, templates/1-hbnb.html, static/scripts/1-hbnb.js
 <details>
 <summary>
-Summary: </summary>
-<ul>
-Next, we enhanced the functionality of the Flask web application by making the filters section dynamic. The task involved updating the Flask route, creating a new HTML template with dynamic filtering functionality using checkboxes, and writing JavaScript code to handle the checkbox changes and update the displayed amenities accordingly.
+Task Summary: </summary>
 
+The next task involved enhancing functionality of the Flask web application by making the filters section dynamic. This involved updating the Flask route, creating a new HTML template with dynamic filtering functionality using checkboxes, and writing JavaScript code to handle the checkbox changes and update the displayed amenities accordingly. The steps are outlined below:
 
-We replaced the existing route /0-hbnb with /1-hbnb in the Python script file (1-hbnb.py).
-
-We created a new HTML template named 1-hbnb.html based on the existing 0-hbnb.html template.
-
-We updated the HTML Template by:
-
-Importing JQuery and the JavaScript file static/scripts/1-hbnb.js in the `head` tag of 1-hbnb.html.
-
-Appending the cache_id variable as a query string to the `script` tag.
-
-Adding a checkbox input (<input type="checkbox">) to each amenity (`li` tag).
-
-Positioning the checkbox 10px to the left of the Amenity name.
-
-Adding two attributes to the checkbox input:
-
-data-id=":amenity_id": This attribute stores the Amenity ID, allowing retrieval from the DOM.
-data-name=":amenity_name": This attribute stores the Amenity name, allowing retrieval from the DOM.
-
-We wrote static/scripts/1-hbnb.js:
-
-The script only executes when the DOM is fully loaded.
-JQuery is used for DOM manipulation.
-
-Listens for changes on each input checkbox tag:
-
-If the checkbox is checked, we store the Amenity ID in a variable
-If the checkbox is unchecked, we remove the Amenity ID from the variable.
-
-We also updated the `h4` tag inside the div Amenities with the list of Amenities checked.
-
+<ol>
+  <li>replaced the existing route <code>/0-hbnb</code> with <code>/1-hbnb</code> in the Python script file <code>1-hbnb.py</code>.</li>
+  <li>created new HTML template named <code>1-hbnb.html</code> based on the existing <code>0-hbnb.html </code>template and updated it in the following ways:
+    <ul>
+      <li>Imported JQuery and the JavaScript file static/scripts/1-hbnb.js in the <code>head</code> tag of <code>1-hbnb.html</code>.</li>
+      <li>Appended <code>cache_id</code> variable as a query string to the <code>script</code> tag.</li>
+      <li>Added a checkbox input <code>input[type="checkbox"]</code> to each amenity <code>li</code> tag.</li>
+      <li>Positioned the checkbox 10px to the left of "Amenity".
+      <li>Added two attributes to the checkbox input:
+        <ul>
+          <li><code>data-id=":amenity.id"</code>: stores Amenity ID, allowing retrieval from the DOM.</li>
+          <li><code>data-name=":amenity.name"</code>: stores Amenity name, allowing retrieval from the DOM.</li>
+        </ul>
+      </li>
+    </ul>
+  <li>wrote static/scripts/1-hbnb.js:
+    <ul>
+      <li>script only executes when the DOM is fully loaded.</li>
+      <li>JQuery is used for DOM manipulation.</li>
+      <li>Listens for changes on each input checkbox tag:
+        <ul>
+          <li>if checkbox = checked: Amenity ID stored in a variable</li>
+          <li>if checkbox = unchecked: Amenity ID removed from the variable.</li>
+        </ul>
+      </li>
+    <li>updated <code>h4</code> tag inside the "Amenities" div with the list of checked Amenities.</li>
+</ol>
 
 1-hbnb.py:
 

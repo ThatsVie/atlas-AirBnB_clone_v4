@@ -239,7 +239,8 @@ This repository was originally forked from this [codebase](https://github.com/al
 
 To view a README file for the Atlas AirBnb Clone v3 project please visit [this link](https://github.com/ThatsVie/atlas-AirBnB_clone_v3/blob/master/README.md).
 
-## AirBnb Clone v4 Web Dynamic
+## AirBnb Clone v4 Web Dynamic:
+This part of the project updates some existing files, and also creates a directory for new web dynamic files, including python and javascript. Flask, Jinja, AJAX, and JQuery are all utilized together to take the project a step further, adding dynamic functionality for client-side usage. By the end of this project, you will be able to load the clone AirBnB site and interact with it by searching for places to stay based on the "Amenities" filter.
 
 ### File Overview
 <details>

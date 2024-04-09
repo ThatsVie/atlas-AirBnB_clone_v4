@@ -822,3 +822,6 @@ These logs indicate that the Flask server is running successfully, and the API e
 Courtney Graham - [Github](https://github.com/grahacr)
 
 Vie Paula - [Github](https://github.com/ThatsVie)
+
+![Untitled design](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/3f2286dc-e27b-4f46-8347-815c93001c2b)
+

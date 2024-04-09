@@ -248,17 +248,14 @@ This part of the project updates some existing files, and also creates a directo
 <ul>
   <li><sub>
     web_dynamic/0-hbnb.py is the main script that starts the Flask web application and defines the route to render the HTML template.</sub></li>
-
-<li><sub>web_dynamic/templates/0-hbnb.html is the HTML template that provides the structure and content of the web page.</sub></li>
-
-<li><sub>Static files (CSS stylesheets, image assets) are used to style the web page.</sub></li>
-
-<li><sub>Models define the data structure and relationships used to retrieve data from the database.</sub></li>
+  <li><sub>web_dynamic/templates/0-hbnb.html is the HTML template that provides the structure and content of the web page.</sub></li>
+  <li><sub>Static files (CSS stylesheets, image assets) are used to style the web page.</sub></li>
+  <li><sub>Models define the data structure and relationships used to retrieve data from the database.</sub></li>
 </ul>
 </details>
 
 <details>
-<summary><i>web_dynamic/1-hbnb.py, web_dynamic/templates/1-hbnb.html, web_dynamic/static/scripts/1-hbnb.js  </i></summary>
+<summary><i>web_dynamic/1-hbnb.py, web_dynamic/templates/1-hbnb.html, web_dynamic/static/scripts/1-hbnb.js</i></summary>
 <ul>
   <li><sub>web_dynamic/1-hbnb.py is the Flask backend responsible for rendering the web page and providing data to populate it.</sub></li>
   <li><sub>web_dynamic/templates/1-hbnb.html is the HTML template that defines the structure and content of the web page. It imports JQuery and the JavaScript file 1-hbnb.js to add dynamic functionality.</sub></li>
@@ -370,68 +367,54 @@ Models (State, City, Amenity, Place):
 <ul>
   
 
-**Input this command in your terminal**
+### Input the following command in your terminal
+
 
 ```bash
 HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db python3 -m web_dynamic.0-hbnb
 ```
 
-This command is executing 0-hbnb.py. It sets several environment variables related to MySQL database connection parameters before running the script. 
+<i>This command executes `0-hbnb.py` after setting several environment variables related to MySQL database connection parameters:</i>
 
-HBNB_MYSQL_USER=hbnb_dev: This sets the MySQL database username to hbnb_dev.
+- `HBNB_MYSQL_USER=hbnb_dev`: This sets the MySQL database username to hbnb_dev.
+- `HBNB_MYSQL_PWD=hbnb_dev_pwd`: This sets the MySQL database password to hbnb_dev_pwd.
+- `HBNB_MYSQL_HOST=localhost`: This sets the MySQL database host to localhost.
+- HBNB_MYSQL_DB=hbnb_dev_db: This sets the name of the MySQL database to hbnb_dev_db.
+- `HBNB_TYPE_STORAGE=db`: This sets the storage type to db, indicating that the application is configured to use a database for storage.
 
-HBNB_MYSQL_PWD=hbnb_dev_pwd: This sets the MySQL database password to hbnb_dev_pwd.
 
-HBNB_MYSQL_HOST=localhost: This sets the MySQL database host to localhost.
-
-HBNB_MYSQL_DB=hbnb_dev_db: This sets the name of the MySQL database to hbnb_dev_db.
-
-HBNB_TYPE_STORAGE=db: This sets the storage type to db, indicating that the application is configured to use a database for storage.
-
-After setting these environment variables, the command runs the Python script 0-hbnb.py as a module using Python 3 (python3 -m). This means that Python will treat the web_dynamic directory as a package and execute the 0-hbnb.py script within that package.
+After setting these environment variables, the command runs the Python script in 0-hbnb.py as a module using Python 3 (`python3 -m`). This means that Python will treat the web_dynamic directory as a package and execute the 0-hbnb.py script within that package.
 
 ![image](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/b8a475ca-be6b-4403-87de-e426a6c665ae)
 
-Environment variables for MySQL database connection are set.
-
-The Python script 0-hbnb is executed as a module using Python 3.
-
-Flask starts serving the application on port 5000.
-
-Requests are made to the server:
-
-A request to /0-hbnb/ returns a 200 response.
-
-Requests for static CSS files and images return 200 responses.
-
-Some image requests return 304 responses, indicating no modification since the last request.
+- Environment variables for MySQL database connection are set.
+- The Python script 0-hbnb is executed as a module using Python 3.
+- Flask starts serving the application on port 5000.
+- Requests are made to the server:
+  - A request to /0-hbnb/ returns a 200 response.
+  - Requests for static CSS files and images return 200 responses.
+  - Some image requests return 304 responses, indicating no modification since the last request.
 
 
-
-**In another window if your terminal input this command:**
+### In another window of your terminal, input this command:
 
 ```bash
 curl -s -XGET http://0.0.0.0:5000/0-hbnb/ | head -6
 ```
 
-This command is using curl to make a GET request to a web server running locally on the address http://0.0.0.0:5000/0-hbnb/. 
+This command uses curl to make a GET request to a web server running locally on the address <code>http://0.0.0.0:5000/0-hbnb/</code>. 
 
-curl: This is a command-line tool for transferring data using various network protocols. It is commonly used to make HTTP requests.
-
--s: This option instructs curl to operate in silent mode, where it suppresses the progress meter and other output. It makes curl run silently, without showing any progress or error messages.
-
--XGET: This option specifies the HTTP method to be used in the request. In this case, it explicitly specifies that a GET request should be made. However, curl automatically uses GET requests if no method is specified, so this part is redundant but explicitly specifies the HTTP method.
-
-http://0.0.0.0:5000/0-hbnb/: This is the URL to which the GET request is made. It specifies the address 0.0.0.0 on port 5000, with the path /0-hbnb/. This would typically be the address of a web server running locally on the machine.
-
-|: This is a pipe operator that redirects the output of the command on the left side to the input of the command on the right side.
-
-head -6: This is a command that prints the first 6 lines of the input it receives. It's typically used to show only the beginning of a file or the output of a command when combined with the pipe operator |.
+- `curl`: This is a command-line tool for transferring data using various network protocols. It is commonly used to make HTTP requests.
+- `-s`: This option instructs curl to operate in silent mode, where it suppresses the progress meter and other output. It makes curl run silently, without showing any progress or error messages.
+- `-XGET`: This option specifies the HTTP method to be used in the request. In this case, it explicitly specifies that a GET request should be made. However, curl automatically uses GET requests if no method is specified, so this part is redundant but explicitly specifies the HTTP method.
+- `http://0.0.0.0:5000/0-hbnb/`: This is the URL to which the GET request is made. It specifies the address 0.0.0.0 on port 5000, with the path /0-hbnb/. This would typically be the address of a web server running locally on the machine.
+- `|`: This is a pipe operator that redirects the output of the command on the left side to the input of the command on the right side.
+- `head -6`: This is a command that prints the first 6 lines of the input it receives. It's typically used to show only the beginning of a file or the output of a command when combined with the pipe operator `|`.
 
 ![image](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/21a9966f-ce05-4b3f-9ec4-ec2257fb71e1)
 
 
-**In your browser:**
+### In your browser:
 
 ```bash
 http://localhost:5000/0-hbnb/
@@ -512,13 +495,13 @@ The next task involved enhancing functionality of the Flask web application by m
 <summary> Usage: </summary>
 <ul>
   
-**Input this command in your terminal:**
+### Input this command in your terminal:
 
 ```bash
 HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db python3 -m web_dynamic.1-hbnb
 ```
 
-**In your browser:**
+### In your browser:
 
 ```bash
 http://localhost:5000/1-hbnb/
@@ -623,64 +606,54 @@ web_dynamic/static/scripts/2-hbnb.js:
 <summary> Usage: </summary>
 <ul>
 
-**Input this command in your terminal:**
+### Input this command in your terminal:
 ```bash
 HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db HBNB_API_PORT=5001 python3 -m api.v1.app
 ```
 
-This command is configuring environment variables related to a MySQL database and the API, and then starting the Flask application defined in the api.v1.app module.
+<i>This command is configuring environment variables related to a MySQL database and the API, and then starting the Flask application defined in the api.v1.app module.</i>
 
-HBNB_MYSQL_USER=hbnb_dev: Sets the MySQL username to hbnb_dev.
-
-HBNB_MYSQL_PWD=hbnb_dev_pwd: Sets the MySQL password to hbnb_dev_pwd.
-
-HBNB_MYSQL_HOST=localhost: Sets the MySQL host to localhost.
-
-HBNB_MYSQL_DB=hbnb_dev_db: Sets the MySQL database name to hbnb_dev_db.
-
-HBNB_TYPE_STORAGE=db: Sets the storage type to use a database.
-
-HBNB_API_PORT=5001: Sets the port for the API to 5001.
-
-python3 -m api.v1.app: Runs the Python module api.v1.app using Python 3.
+- `HBNB_MYSQL_USER=hbnb_dev`: Sets the MySQL username to hbnb_dev.
+- `HBNB_MYSQL_PWD=hbnb_dev_pwd`: Sets the MySQL password to hbnb_dev_pwd.
+- `HBNB_MYSQL_HOST=localhost`: Sets the MySQL host to localhost.
+- `HBNB_MYSQL_DB=hbnb_dev_db`: Sets the MySQL database name to hbnb_dev_db.
+- `HBNB_TYPE_STORAGE=db`: Sets the storage type to use a database.
+- `HBNB_API_PORT=5001`: Sets the port for the API to 5001.
+- `python3 -m api.v1.app`: Runs the Python module api.v1.app using Python 3.
 
 
-**Input this command in your terminal:**
+### Input the following command in a separate terminal:
+
 ```bash
 HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db python3 -m web_dynamic.2-hbnb
 ```
-HBNB_MYSQL_USER=hbnb_dev: Sets the MySQL database username to hbnb_dev.
 
-HBNB_MYSQL_PWD=hbnb_dev_pwd: Sets the MySQL database password to hbnb_dev_pwd.
-
-HBNB_MYSQL_HOST=localhost: Sets the MySQL database host to localhost.
-
-HBNB_MYSQL_DB=hbnb_dev_db: Sets the MySQL database name to hbnb_dev_db.
-
-HBNB_TYPE_STORAGE=db: Sets the type of storage to use to db, which likely indicates that the application will use a MySQL database for storage.
-
-python3 -m web_dynamic.2-hbnb: Executes the Python script 2-hbnb.py located in the web_dynamic package/module using Python 3 as the interpreter. This script starts a Flask web application that serves the dynamic content for your application.
+- `HBNB_MYSQL_USER=hbnb_dev`: Sets the MySQL database username to hbnb_dev.
+- `HBNB_MYSQL_PWD=hbnb_dev_pwd`: Sets the MySQL database password to hbnb_dev_pwd.
+- `HBNB_MYSQL_HOST=localhost`: Sets the MySQL database host to localhost.
+- `HBNB_MYSQL_DB=hbnb_dev_db`: Sets the MySQL database name to hbnb_dev_db.
+- `HBNB_TYPE_STORAGE=db`: Sets the type of storage to use to db, which likely indicates that the application will use a MySQL database for storage.
+- `python3 -m web_dynamic.2-hbnb`: Executes the Python script 2-hbnb.py located in the web_dynamic package/module using Python 3 as the interpreter. This script starts a Flask web application that serves the dynamic content for your application.
 
 ![image](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/1560564b-47fc-476e-9108-90cb7a672486)
 
 
-The server is started, and it's listening on all available IP addresses (0.0.0.0) and ports (5001). It's also listening specifically on 127.0.0.1:5001 and 172.25.115.237:5001, indicating that the server is accessible locally and from another IP address.
-
-The last line indicates that a GET request to /api/v1/status/ was made and received a response with status code 200, indicating success.
+- The server is started, and it's listening on all available IP addresses (0.0.0.0) and ports (5001). It's also listening specifically on 127.0.0.1:5001 and 172.25.115.237:5001, indicating that the server is accessible locally and from another IP address.
+- The last line indicates that a GET request to /api/v1/status/ was made and received a response with status code 200, indicating success.
 
 ![image](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/95e9eb7c-d6a8-435b-9c59-46f2104e7948)
 
 
-This output indicates that a Flask application is being served using a development server. 
+- This output indicates that a Flask application is being served using a development server.
+- The server is started, and it's listening on all available IP addresses (0.0.0.0) and ports (5000). It's also listening specifically on 127.0.0.1:5000 and 172.25.115.237:5000, indicating that the server is accessible locally and from another IP address.
+- The subsequent lines show GET requests being made to various static resources (CSS, JavaScript, and images), all of which are being served successfully with a status code of 200 or 304. The 304 status code indicates that the requested resource has not been modified since the last request, and it can be retrieved from the browser cache.
 
-The server is started, and it's listening on all available IP addresses (0.0.0.0) and ports (5000). It's also listening specifically on 127.0.0.1:5000 and 172.25.115.237:5000, indicating that the server is accessible locally and from another IP address.
+### In your browser:
 
-The subsequent lines show GET requests being made to various static resources (CSS, JavaScript, and images), all of which are being served successfully with a status code of 200 or 304. The 304 status code indicates that the requested resource has not been modified since the last request, and it can be retrieved from the browser cache.
-
-**In your browser**
 ```bash
 http://localhost:5000/2-hbnb
 ```
+
 **This is before the API is connected. Note the gray circle in the top right**
 
 ![httplocalhost50002-hbnb](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/0c3c9122-e7a8-4d1a-851d-552c7710b26f)
@@ -742,13 +715,13 @@ web_dynamic/static/scripts/3-hbnb.js:
 <summary> Usage: </summary>
 <ul>
 
-**Start the API server:**
+### Start the API server:
 
 ```bash
 HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db HBNB_API_PORT=5001 python3 -m api.v1.app
 ```
 
-**In another window of your terminal run the web application server:**
+### In another window of your terminal, run the web application server:
 ```bash
 HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db python3 -m web_dynamic.3-hbnb
 ```
@@ -756,7 +729,7 @@ HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost H
 ![image](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/f976900e-93d5-491c-8bdb-b2c57b8a5a03)
 
 
-**In your browser:**
+### In your browser:
 ```bash
 http://localhost:5000/3-hbnb
 ```
@@ -812,13 +785,13 @@ These files work together to create a web application where users can view place
 <summary> Usage: </summary>
 <ul>
 
-**Start the API server:**
+#### Start the API server:
 
 ```bash
 HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db HBNB_API_PORT=5001 python3 -m api.v1.app
 ```
 
-**In another window of your terminal run the web application server:**
+#### In another window of your terminal, run the web application server:
 
 ```bash
 HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db python3 -m web_dynamic.4-hbnb
@@ -827,7 +800,7 @@ HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost H
 
 
 
-**In your browser:**
+#### In your browser:
 
 ```bash
 http://localhost:5000/4-hbnb
@@ -851,7 +824,7 @@ http://localhost:5000/4-hbnb
 
 This project was developed on VSCode with Live Server.
   
-### Authors
+## Authors
 
 Courtney Graham - [Github](https://github.com/grahacr)
 

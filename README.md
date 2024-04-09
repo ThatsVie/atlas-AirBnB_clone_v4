@@ -259,63 +259,44 @@ To view a README file for the Atlas AirBnb Clone v3 project please visit [this l
 <details>
 <summary><i>web_dynamic/1-hbnb.py, web_dynamic/templates/1-hbnb.html, web_dynamic/static/scripts/1-hbnb.js  </i></summary>
 <ul>
-  <li><sub>
-
-web_dynamic/1-hbnb.py is the Flask backend responsible for rendering the web page and providing data to populate it.</sub></li>
-
-<li><sub>web_dynamic/templates/1-hbnb.html is the HTML template that defines the structure and content of the web page. It imports JQuery and the JavaScript file 1-hbnb.js to add dynamic functionality.</sub></li>
-
-<li><sub>web_dynamic/static/scripts/1-hbnb.js is the JavaScript file that adds dynamic behavior to the web page, such as handling checkbox changes and updating the displayed amenities.</sub></li>
-
-<li><sub>Together, these files work to create a dynamic web page where users can interact with checkboxes to filter amenities, while the backend provides the necessary data.</sub></li>
+  <li><sub>web_dynamic/1-hbnb.py is the Flask backend responsible for rendering the web page and providing data to populate it.</sub></li>
+  <li><sub>web_dynamic/templates/1-hbnb.html is the HTML template that defines the structure and content of the web page. It imports JQuery and the JavaScript file 1-hbnb.js to add dynamic functionality.</sub></li>
+  <li><sub>web_dynamic/static/scripts/1-hbnb.js is the JavaScript file that adds dynamic behavior to the web page, such as handling checkbox changes and updating the displayed amenities.</sub></li>
+</ul>
+<sub>Together, these files work to create a dynamic web page where users can interact with checkboxes to filter amenities, while the backend provides the necessary data.</sub>
 
 </ul></details>
 
 <details>
 <summary><i>api/v1/app.py, web_dynamic/2-hbnb.py, web_dynamic/templates/2-hbnb.html, web_dynamic/static/styles/3-headers.css, web_dynamic/static/scripts/2-hbnb.js </i></summary>
 <ul>
-  <li><sub>
-    
-api/v1/app.py serves as the backend of the application, providing an API endpoint for accessing data related to the AirBnB service.</sub></li>
-
-<li><sub>web_dynamic/2-hbnb.py is the frontend of the application, serving HTML templates and handling user requests.</sub></li>
-
-<li><sub>web_dynamic/templates/2-hbnb.html defines the structure of the webpage and includes dynamic content placeholders.</sub></li>
-
-<li><sub>web_dynamic/static/styles/3-header.css styles the header section of the webpage, including the newly added API status indicator.</sub></li>
-
-<li><sub>web_dynamic/static/scripts/2-hbnb.js adds interactivity to the webpage, updating the list of selected amenities and checking the status of the API dynamically.</sub></li>
-
-<li><sub>Together, these files create a cohesive web application that allows users to interact with AirBnB data through a user-friendly interface while also providing real-time feedback on the status of the API.</sub></li>
+  <li><sub>api/v1/app.py serves as the backend of the application, providing an API endpoint for accessing data related to the AirBnB service.</sub></li>
+  <li><sub>web_dynamic/2-hbnb.py is the frontend of the application, serving HTML templates and handling user requests.</sub></li>
+  <li><sub>web_dynamic/templates/2-hbnb.html defines the structure of the webpage and includes dynamic content placeholders.</sub></li>
+  <li><sub>web_dynamic/static/styles/3-header.css styles the header section of the webpage, including the newly added API status indicator.</sub></li>
+  <li><sub>web_dynamic/static/scripts/2-hbnb.js adds interactivity to the webpage, updating the list of selected amenities and checking the status of the API dynamically.</sub></li>
+</ul>
+<sub>Together, these files create a cohesive web application that allows users to interact with AirBnB data through a user-friendly interface while also providing real-time feedback on the status of the API.</sub></li>
   
 </ul></details>
 
 <details>
 <summary><i>web_dynamic/3-hbnb.py, web_dynamic/templates/3-hbnb.html, web_dynamic/static/scripts/3-hbnb.js </i></summary>
 <ul>
-  <li><sub>
-
-web_dynamic/3-hbnb.py sets up a Flask web application with a route that renders the 3-hbnb.html template. </sub></li>
-
-<li><sub>web_dynamic/templates/3-hbnb.html is the HTML template that defines the structure of the webpage and imports necessary CSS and JavaScript files. </sub></li>
-
-<li><sub>web_dynamic/static/scripts/3-hbnb.js is the JavaScript file that adds interactivity to the webpage, such as updating lists based on checkbox changes and retrieving and displaying places data dynamically.</sub></li>
-
-<li><sub>Together, these files create a dynamic web application where users can interact with data retrieved from the backend.</sub></li>
+  <li><sub>web_dynamic/3-hbnb.py sets up a Flask web application with a route that renders the 3-hbnb.html template. </sub></li>
+  <li><sub>web_dynamic/templates/3-hbnb.html is the HTML template that defines the structure of the webpage and imports necessary CSS and JavaScript files. </sub></li>
+  <li><sub>web_dynamic/static/scripts/3-hbnb.js is the JavaScript file that adds interactivity to the webpage, such as updating lists based on checkbox changes and retrieving and displaying places data dynamically.</sub></li>
+</ul>
+<sub>Together, these files create a dynamic web application where users can interact with data retrieved from the backend.</sub>
 
 </ul></details>
 
 <details>
 <summary><i>web_dynamic/4-hbnb.py, web_dynamic/templates/4-hbnb.html, web_dynamic/static/scripts/4-hbnb.js </i></summary>
 <ul>
-  <li><sub>
-  
-4-hbnb.py Initializes a Flask web application with a route /4-hbnb that renders 4-hbnb.html. Retrieves data from the database and passes it to the template.</sub></li>
-
-<li><sub>4-hbnb.html is the HTML template for the web page. iIt ncludes CSS and JavaScript files, sets up the layout, and dynamically populates content based on data passed from the backend.</sub></li>
-
-<li><sub>4-hbnb.js is the client-side JavaScript for the page. It handles checkbox changes, sends requests to check API status and retrieve places data, and dynamically updates the page based on user interactions.</sub></li>
-
+  <li><sub>4-hbnb.py Initializes a Flask web application with a route /4-hbnb that renders 4-hbnb.html. Retrieves data from the database and passes it to the template.</sub></li>
+  <li><sub>4-hbnb.html is the HTML template for the web page. iIt ncludes CSS and JavaScript files, sets up the layout, and dynamically populates content based on data passed from the backend.</sub></li>
+  <li><sub>4-hbnb.js is the client-side JavaScript for the page. It handles checkbox changes, sends requests to check API status and retrieve places data, and dynamically updates the page based on user interactions.</sub></li>
 </ul></details>
 
 
@@ -614,9 +595,7 @@ web_dynamic/static/scripts/2-hbnb.js:
 - listens for changes on input checkboxes for "amenities", updating list of selected amenities dynamically.
 - makes AJAX request to the API to check status, updating the visual indicator <code>api_status</code> based on the status response.
 
-
-
-</ul>  </details>
+</ul></details>
 
 <details>
 <summary> Usage: </summary>
@@ -691,28 +670,46 @@ http://localhost:5000/2-hbnb
 
 </ul>  </details>
 
-#### web_dynamic/3-hbnb.py, web_dynamic/templates/3-hbnb.html, web_dynamic/static/scripts/3-hbnb.js
+#### Task 4 associated files: web_dynamic/3-hbnb.py, web_dynamic/templates/3-hbnb.html, web_dynamic/static/scripts/3-hbnb.js
 <details>
-<summary> Summary: </summary>
-<ul>
+<summary> Task Summary: </summary>
 
 The overall goal of this task is to load places dynamically from the front-end by making a request to the specified API endpoint and displaying the retrieved data without relying on the back-end to render the places.
 
-To accomplish this in the file 3-hbnb.py, we changed the route from /2-hbnb to /3-hbnb, based on the existing 2-hbnb.py file.
+To accomplish this, we followed these steps:
+<ol>
+  <li>in file 3-hbnb.py, changed the route from <code>/2-hbnb</code> => <code>/3-hbnb</code>, based on the existing 2-hbnb.py file.</li>
+  <li>created new HTML template file <code>3-hbnb.html</code> based on the existing <code>2-hbnb.html</code>, updating it by: importing JavaScript file 3-hbnb.js in the <code>head</code> tag instead of 2-hbnb.js, then removing Jinja section responsible for displaying all places (all <code>article</code> tags).</li>
+  <li>created new JavaScript script named 3-hbnb.j, based on 2-hbnb.js, which will:
+    <ul>
+      <li>make request to the API endpoint <code>http://localhost:5001/api/v1/places_search/</code>, returning a list of places</li>
+      <li>sends POST request with empty dictionary in the body to this endpoint.</li>
+      <li>Upon receiving the response, script loops through the result and dynamically creates <code>article</code> tags representing each place in the section with class <code>places</code>, excluding the Owner tag from the place description.</li>
+    </ul>
+  </li>
+</ol>
 
-We created a new HTML template file named 3-hbnb.html based on the existing 2-hbnb.html. We updated the template by importing the JavaScript file static/scripts/3-hbnb.js in the `head` tag instead of 2-hbnb.js. We also removed the Jinja section responsible for displaying all places (all `article` tags).
+### Files
 
-Next, we created a new JavaScript script named static/scripts/3-hbnb.js. This script is based on 2-hbnb.js. It makes a request to the API endpoint http://localhost:5001/api/v1/places_search/, which returns a list of places. The script sends a POST request with an empty dictionary in the body to this endpoint. Upon receiving the response, the script loops through the result and dynamically creates `article` tags representing each place in the section with the class places. The script excludes the Owner tag from the place description.
+web_dynamic/3-hbnb.py: 
+- Python file, sets up a Flask web application.
+- The purpose of this file is to serve as the backend for the web application and handle HTTP requests.
+- defines a route <code>/3-hbnb</code>, rendering the template 3-hbnb.html.
+- Inside route function, SQLAlchemy is utilized to retrieve data from the database, and passing it to the template for rendering. 
 
+web_dynamic/templates/3-hbnb.html:
+- HTML file, template for web page served by the Flask application.
+- The purpose of this file is to provide the structure and layout for the web page.
+- contains structure of the webpage including header, filters, places, and footer sections.
+- imports necessary CSS and JavaScript files and includes placeholders for dynamic content. 
 
-web_dynamic/3-hbnb.py: This Python file sets up a Flask web application. It defines a route /3-hbnb that renders the template 3-hbnb.html. Inside the route function, it retrieves data from the database using SQLAlchemy and passes it to the template for rendering. The purpose of this file is to serve as the backend for the web application and handle HTTP requests.
+web_dynamic/static/scripts/3-hbnb.js:
+- JavaScript file, responsible for adding interactivity to the webpage.
+- The purpose of this file is to enhance the user experience by adding dynamic content and interactions to the webpage.
+- listens for changes on checkboxes, updating the list of checked amenities dynamically.
+- checks status of the API, and makes an AJAX request to retrieve "places" data from the backend. Upon receiving this data, HTML is dynamically generated for each place, and appended to the appropriate section on the webpage. 
+</details>
 
-web_dynamic/templates/3-hbnb.html: This HTML file is a template for the web page served by the Flask application. It contains the structure of the webpage including header, filters, places, and footer sections. It imports the necessary CSS and JavaScript files and includes placeholders for dynamic content. The purpose of this file is to provide the structure and layout for the web page.
-
-web_dynamic/static/scripts/3-hbnb.js: This JavaScript file is responsible for adding interactivity to the webpage. It listens for changes on checkboxes, updates the list of checked amenities dynamically, checks the status of the API, and makes an AJAX request to retrieve places data from the backend. Upon receiving the places data, it dynamically generates HTML for each place and appends it to the appropriate section on the webpage. The purpose of this file is to enhance the user experience by adding dynamic content and interactions to the webpage.
-
-
-</ul>  </details>
 
 <details>
 <summary> Usage: </summary>
@@ -742,28 +739,44 @@ http://localhost:5000/3-hbnb
   </ul>  </details>
 
   
-#### web_dynamic/4-hbnb.py, web_dynamic/templates/4-hbnb.html, web_dynamic/static/scripts/4-hbnb.js
+#### Task 5 associated files: web_dynamic/4-hbnb.py, web_dynamic/templates/4-hbnb.html, web_dynamic/static/scripts/4-hbnb.js
 <details>
-<summary> Summary: </summary>
-<ul>
+<summary> Task Summary: </summary>
 
-Next, we created 4-hbnb.py to replace the existing route 3-hbnb with 4-hbnb. 
-We created a new HTML template named 4-hbnb.html, based on the existing 3-hbnb.html. In the new HTML template, the JavaScript file 4-hbnb.js is imported instead of 3-hbnb.js.
+<ol>
+  <li>created 4-hbnb.py (based on 3-hbnb.py) replacing the existing <code>3-hbnb</code>route with <code>4-hbnb</code>.</li>
+  <li>created new HTML template named 4-hbnb.html, based on the existing 3-hbnb.html, updating it to import <code>4-hbnb.js</code> instead of <code>3-hbnb.js</code>.</li>
+  <li>created JavaScript script 4-hbnb.js, building upon the functionality of 3-hbnb.js, updating it in the following ways:
+    <ul>
+      <li>When button tag is clicked, new POST request is sent, with list of checked Amenities, to <code>places_search</code>. This implementation completes the first filter and enhances the functionality of the web application.</li>
+    </ul>
+  </li>
+</ol>
 
-We created the JavaScript script 4-hbnb.js, building upon the functionality of 3-hbnb.js. When the button tag is clicked, a new POST request to places_search is made with the list of Amenities checked. This implementation completes the first filter and enhances the functionality of the web application.
+### Files
 
-4-hbnb.py: This Python file initializes a Flask web application. It defines a route /4-hbnb that renders an HTML template named 4-hbnb.html. Inside the route function, it retrieves data from the database (states, amenities, places) and passes it to the HTML template for rendering.
+4-hbnb.py:
+- Python file, initializes a Flask web application.
+- defines route <code>/4-hbnb</code> that renders HTML template named 4-hbnb.html.
+- inside route function, data is retrieved from the database (states, amenities, places) and passed to HTML template for rendering.
 
-4-hbnb.html: This HTML file is the template for the web page rendered by the Flask application. It includes various CSS and JavaScript files, sets up the layout of the page with sections for filters and places, and dynamically populates content based on data passed from the Python file.
+4-hbnb.html:
+- HTML file, template for web page rendered by the Flask application.
+- includes various CSS and JavaScript files, sets up the layout of the page with sections for filters and places, and dynamically populates content based on data passed from the Python file.
 
-4-hbnb.js: This JavaScript file contains client-side scripting for the web page. It initializes an array to store checked amenities, listens for changes on input checkboxes, sends a GET request to check the API status, and sends a POST request to retrieve places data. It dynamically generates HTML for each place and appends it to the appropriate section on the web page. Additionally, it listens for a click event on the search button and triggers a search function with the selected filters.
+4-hbnb.js:
+- JavaScript file, contains client-side scripting for the web page.
+- initializes an array to store checked amenities
+- listens for changes on input checkboxes
+- sends GET request to check the API status
+- sends POST request to retrieve places data
+- dynamically generates HTML for each place, appending to the appropriate section on the web page.
+- Additionally, script listens for a click event on the search button and triggers a search function with the selected filters.
 
 These files work together to create a web application where users can view places and apply filters based on selected amenities. The Python file serves as the backend, handling routing and data retrieval, while the HTML and JavaScript files handle the frontend, defining the structure and behavior of the web page.
+</details>
 
-
-</ul>  </details>
-
-  <details>
+<details>
 <summary> Usage: </summary>
 <ul>
 

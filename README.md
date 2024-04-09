@@ -487,44 +487,30 @@ The next task involved enhancing functionality of the Flask web application by m
     <li>updated <code>h4</code> tag inside the "Amenities" div with the list of checked Amenities.</li>
 </ol>
 
+### Files
+
 1-hbnb.py:
-
-This Python script starts a Flask web application.
-
-It imports necessary modules and defines routes.
-
-The route /1-hbnb renders the 1-hbnb.html template.
-
-Inside the route function hbnb(), data for states, amenities, and places are fetched from the database using the storage module.
-
-A unique cache_id is generated using uuid.uuid4() to prevent asset caching.
-
-It renders the 1-hbnb.html template with the retrieved data and cache_id.
+- Python script, starts Flask web application.
+- imports necessary modules and defines routes.
+- The route /1-hbnb renders the 1-hbnb.html template.
+- Inside the route function <code>hbnb()</code>, the storage module is used to fetch database data on states, amenities, and places.
+- <code>uuid.uuid4()</code>is used to generate a unique <code>cache_id</code>, preventing asset caching.
+- Renders the 1-hbnb.html template using the retrieved data and cache_id.
 
 1-hbnb.html:
-
-This HTML template defines the structure of the web page.
-
-It imports necessary CSS stylesheets with cache IDs to prevent caching.
-
-JQuery and the JavaScript file 1-hbnb.js are imported to add dynamic functionality.
-
-The template contains sections for filters, amenities, places, and a footer.
-
-It dynamically generates lists of states, amenities, and places fetched from the Flask route.
-
-Checkboxes for amenities are added dynamically with data attributes (data-id and data-name) for each amenity.
+- HTML template, defines the structure of the web page.
+- imports necessary CSS stylesheets with cache IDs to prevent caching.
+- import JQuery and the JavaScript file 1-hbnb.js to add dynamic functionality.
+- template contains sections for filters, amenities, places, and a footer.
+- dynamically generates lists of states, amenities, and places fetched from the Flask route.
+- Checkboxes for amenities are added dynamically using data attributes (data-id and data-name) for each amenity.
 
 1-hbnb.js:
-
-This JavaScript file adds dynamic functionality to the web page using JQuery.
-
-It listens for changes on each input checkbox tag (amenities).
-
-When a checkbox is checked or unchecked, it updates the checkedAmenities array accordingly.
-
-It then generates a comma-separated string of checked amenity names and updates the text of the `h4` tag inside the div with class amenities.
-</ul>  </details>
+- JavaScript file, adds dynamic functionality to the web page using JQuery.
+- listens for changes on each input checkbox tag <code>amenities</code>.
+- When a checkbox is checked or unchecked, the checkedAmenities array is updated accordingly.
+- Generates comma-separated string of checked amenity names and updates the text of the <code>h4</code> tag inside the div with class amenities.
+</details>
 
 <details>
 <summary> Usage: </summary>

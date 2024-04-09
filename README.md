@@ -378,7 +378,7 @@ HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost H
 - `HBNB_MYSQL_USER=hbnb_dev`: This sets the MySQL database username to hbnb_dev.
 - `HBNB_MYSQL_PWD=hbnb_dev_pwd`: This sets the MySQL database password to hbnb_dev_pwd.
 - `HBNB_MYSQL_HOST=localhost`: This sets the MySQL database host to localhost.
-- HBNB_MYSQL_DB=hbnb_dev_db: This sets the name of the MySQL database to hbnb_dev_db.
+- `HBNB_MYSQL_DB=hbnb_dev_db`: This sets the name of the MySQL database to hbnb_dev_db.
 - `HBNB_TYPE_STORAGE=db`: This sets the storage type to db, indicating that the application is configured to use a database for storage.
 
 
@@ -534,6 +534,7 @@ This ensures that the web application serves the new template 2-hbnb.html under 
     <ul>
       <li>Importing JavaScript file <code>2-hbnb.js</code> in the <code>head</code> tag, replacing <code>1-hbnb.js</code>.</li>
       <li>Adding a new <code>div</code> element in the header tag with a div id of <code>api_status</code>.</li>
+    </ul>
   <li>Updated the web_dynamic/static/styles/3-header.css file to style the new <code>#api_status</code> div in the following ways:
     <ul>
       <li>Aligned to the right</li>
@@ -542,6 +543,7 @@ This ensures that the web application serves the new template 2-hbnb.html under 
       <li>Positioned 30px from the right border.</li>
       <li>Background color is #cccccc.</li>
     </ul>
+  </li>
   <li>In .css file, also added a CSS class named <code>available</code> with a background color of #ff545f, to be applied to new element based on the following javascript file function.</li>
     <li>Created new JavaScript file named <code>2-hbnb.js</code> (based on 1-hbnb.js) and updated it in the following ways:
       <ul>

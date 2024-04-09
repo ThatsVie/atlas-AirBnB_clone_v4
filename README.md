@@ -321,7 +321,7 @@ web_dynamic/3-hbnb.py sets up a Flask web application with a route that renders 
 
 ### Detailed Task Summary and Usage
 
-#### web_dynamic/0-hbnb.py, templates/0-hbnb.html, Static Files, Models
+#### Task 1 associated files: web_dynamic/0-hbnb.py, templates/0-hbnb.html, Static Files, Models
 <details>
 <summary>
 Task Summary: </summary>
@@ -452,7 +452,7 @@ http://localhost:5000/0-hbnb/
 </ul>  </details>
 
 
-#### web_dynamic/1-hbnb.py, templates/1-hbnb.html, static/scripts/1-hbnb.js
+#### Task 2 associated files: web_dynamic/1-hbnb.py, templates/1-hbnb.html, static/scripts/1-hbnb.js
 <details>
 <summary>
 Task Summary: </summary>
@@ -533,125 +533,88 @@ http://localhost:5000/1-hbnb/
 
 </ul>  </details>
 
-#### api/v1/app.py, web_dynamic/2-hbnb.py, web_dynamic/templates/2-hbnb.html, web_dynamic/static/styles/3-header.css, web_dynamic/static/scripts/2-hbnb.js
+#### Task 3 associated files: api/v1/app.py, web_dynamic/2-hbnb.py, web_dynamic/templates/2-hbnb.html, web_dynamic/static/styles/3-header.css, web_dynamic/static/scripts/2-hbnb.js
 
 <details>
-<summary> Summary: </summary>
-<ul>
-  
-Next we ensured that the HBNB web application and API were updated to handle status checks and served the correct template with necessary JavaScript functionality.
+<summary> Task Summary: </summary>
+In the next task, we followed the below steps to ensure that the HBNB web application and API were updated to handle status checks and also served the correct template with necessary JavaScript functionality.
+<ol>
+  <li> Updated the API Entry Point:
+    <ul>
+      <li>In the api/v1/app.py file, we replaced the <code>cors</code> variable: <code>CORS(app, origins="0.0.0.0")</code> => <code>CORS(app, resources={r"/api/v1/*": {"origins": "*"}})</code>. This change allows requests from any origin to access the API, specifically targeting routes under /api/v1/.</li>
+      <li>In the 2-hbnb.py file (based on 1-hbnb.py), updated the route from <code>/1-hbnb</code> => <code>/2-hbnb</code>.
+This ensures that the web application serves the new template 2-hbnb.html under the updated route.</li>
+    </ul>
+  <li>Created a new HTML template 2-hbnb.html based on the existing 1-hbnb.html and updated it by:
+    <ul>
+      <li>Importing JavaScript file <code>2-hbnb.js</code> in the <code>head</code> tag, replacing <code>1-hbnb.js</code>.</li>
+      <li>Adding a new <code>div</code> element in the header tag with a div id of <code>api_status</code>.</li>
+  <li>Updated the web_dynamic/static/styles/3-header.css file to style the new <code>#api_status</code> div in the following ways:
+    <ul>
+      <li>Aligned to the right</li>
+      <li>Circular shape with a diameter of 40px</li>
+      <li>Vertically centered.</li>
+      <li>Positioned 30px from the right border.</li>
+      <li>Background color is #cccccc.</li>
+    </ul>
+  <li>In .css file, also added a CSS class named <code>available</code> with a background color of #ff545f, to be applied to new element based on the following javascript file function.</li>
+    <li>Created new JavaScript file named <code>2-hbnb.js</code> (based on 1-hbnb.js) and updated it in the following ways:
+      <ul>
+        <li>makes HTTP request to <code>http://localhost:5001/api/v1/status/</code> to check status of the HBNB API.</li>
+        <li>If status = "OK", class <code>available</code> is added to <code>div</code> element with ID <code>api_status</code>.</li>
+        <li>If status is <i>NOT</i> "OK", class <code>available</code> is removed from the <code>div</code> element with ID <code>api_status</code>.</li>
+      </ul>
+    </li>
+    </ul>
+  </li>
+</ol>
 
-We updated the API Entry Point:
+**Notes:**
+- <sub>Using <code>http://localhost:5001/api/v1/status/</code> explicitly specifies the loopback address, ensuring a connection to the local machine. This is universally supported and commonly used in development environments.</sub>
 
-In the api/v1/app.py file, we replaced CORS(app, origins="0.0.0.0") with CORS(app, resources={r"/api/v1/*": {"origins": "*"}}).
+- <sub>However, <code>http://0.0.0.0:5001/api/v1/status/</code> (as the task requires) specifies the wildcard address, which means "any available interface." Some systems or configurations may not allow connections to this address, leading to potential issues with connectivity, especially in development environments.</sub>
 
-This change allows requests from any origin to access the API, specifically targeting routes under /api/v1/.
-
-
-In the 2-hbnb.py file (based on 1-hbnb.py), we changed the route from /1-hbnb to /2-hbnb.
-
-This ensures that the web application serves the new template 2-hbnb.html under the updated route.
-
-
-We created a new HTML template 2-hbnb.html based on the existing 1-hbnb.html.
-
-Imported the JavaScript file 2-hbnb.js in the `head` tag instead of 1-hbnb.js.
-
-Added a new `div` element in the header tag with specific attributes:
-
-ID is api_status.
-
-Aligned to the right.
-
-Circular shape with a diameter of 40px.
-
-Vertically centered.
-
-Positioned 30px from the right border.
-
-Background color is #cccccc.
-
-We also added a CSS class named available for this new element in web_dynamic/static/styles/3-header.css. This class has a background color of #ff545f.
-
-We created a new JavaScript file named 2-hbnb.js based on 1-hbnb.js.
-
-This script makes an HTTP request to http://localhost:5001/api/v1/status/ to check the status of the HBNB API.
-
-If the status is "OK", it adds the class available to the `div` element with ID api_status.
-
-If the status is not "OK", it removes the class available from the `div` element with ID api_status.
-
-**Note:**
-
-Using http://localhost:5001/api/v1/status/ explicitly specifies the loopback address, ensuring a connection to the local machine. This is universally supported and commonly used in development environments.
-
-However, http://0.0.0.0:5001/api/v1/status/ (as the task requires) specifies the wildcard address, which means "any available interface." Some systems or configurations may not allow connections to this address, leading to potential issues with connectivity, especially in development environments.
-
-This project was developed on VSCode with Liver Server.
+### Files
+These files collectively define and implement the functionality of the HBNB web application and API, ensuring proper rendering of dynamic content and handling of API status checks.
 
 api/v1/app.py:
-
-This file is the main entry point for the Flask application that serves the HBNB API.
-
-It imports necessary modules and initializes Flask, CORS, and Swagger.
-
-The teardown_appcontext function closes the SQLAlchemy session when the application context is popped.
-
-An error handler is defined for 404 errors, returning a JSON response.
-
-It starts the Flask application, configuring the host and port based on environment variables.
-
-The purpose of this file is to configure the Flask application, define routes, and handle errors for the API.
-
+- python file; main entry point for the Flask application that serves the HBNB API.
+- The purpose of this file is to configure the Flask application by: defining routes, configuring host and port based on environment variables, starting it, and handling errors for the API.
+- imports necessary modules and initializes Flask, CORS, and Swagger.
+- <code>teardown_appcontext</code> function closes the SQLAlchemy session when the application context is popped.
+- define error handler for 404 errors; returns a JSON response.
+  
 
 web_dynamic/2-hbnb.py:
-
-This file is a Flask web application script.
-
-It imports necessary modules and initializes Flask.
-
-The teardown_appcontext function closes the SQLAlchemy session when the application context is popped.
-
-It defines a route /2-hbnb that renders a template 2-hbnb.html.
-
-The purpose of this file is to define a route for the web application and render a specific HTML template.
+- python file, includes Flask web application script.
+- The purpose of this file is to define a route for the web application and render a specific HTML template.
+- imports necessary modules and initializes Flask.
+- <code>teardown_appcontext</code> function closes the SQLAlchemy session when the application context is popped.
+- defines route <code>/2-hbnb</code> that renders template 2-hbnb.html.
 
 
 web_dynamic/templates/2-hbnb.html:
-
-This HTML file represents the template for the web application.
-
-It imports necessary CSS and JavaScript files and sets up the structure of the webpage.
-
-The template includes placeholders for states, amenities, and places data to be rendered dynamically.
-
-It also includes a <div> element with ID api_status in the header section.
-
-The purpose of this file is to define the layout and structure of the web page, including dynamic content.
+- HTML file, represents the template for the web application.
+- The purpose of this file is to define the layout and structure of the web page, including dynamic content.
+- imports necessary CSS and JavaScript files and sets up the structure of the webpage.
+- includes placeholders for states, amenities, and places data to be rendered dynamically.
+- includes a <code>div</code> element with ID <code>api_status</code> in the header section.
 
 
 web_dynamic/static/styles/3-header.css:
-
-This CSS file contains styling rules for the header section of the web page.
-
-It defines styles for the header, logo, and the newly added api_status div.
-
-The .available class is defined to set a specific background color for the api_status div when the API status is "OK".
-
-The purpose of this file is to define the visual appearance of elements in the header section of the webpage.
+- CSS file, contains styling rules for <code>header</code> section of the web page.
+- The purpose of this file is to define the visual appearance of elements in the header section of the webpage.
+- defines styles for the header, logo, and the newly added <code>api_status</code> div.
+- defines the <code>.available</code> class, which sets a specific background color for the <code>api_status</code> div when the API status is "OK".
 
 
 web_dynamic/static/scripts/2-hbnb.js:
+- JavaScript file, contains client-side scripting logic for the web page.
+- The purpose of this file is to add interactivity to the webpage and handle API status checks dynamically.
+- listens for changes on input checkboxes for "amenities", updating list of selected amenities dynamically.
+- makes AJAX request to the API to check status, updating the visual indicator <code>api_status</code> based on the status response.
 
-This JavaScript file contains client-side scripting logic for the web page.
 
-It listens for changes on input checkboxes for amenities and updates the list of selected amenities dynamically.
-
-It also makes an AJAX request to the API to check the status and updates the visual indicator (api_status) based on the response.
-
-The purpose of this file is to add interactivity to the webpage and handle API status checks dynamically.
-
-These files collectively define and implement the functionality of the HBNB web application and API, ensuring proper rendering of dynamic content and handling of API status checks.
 
 </ul>  </details>
 
@@ -839,6 +802,8 @@ http://localhost:5000/4-hbnb
 
 
   </ul>  </details>
+
+This project was developed on VSCode with Live Server.
   
 ### Authors
 

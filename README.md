@@ -242,7 +242,7 @@ To view a README file for the Atlas AirBnb Clone v3 project please visit [this l
 ## AirBnb Clone v4 Web Dynamic:
 This part of the project updates some existing files, and also creates a directory for new web dynamic files, including python and javascript. Flask, Jinja, AJAX, and JQuery are all utilized together to take the project a step further, adding dynamic functionality for client-side usage. By the end of this project, you will be able to load the clone AirBnB site and interact with it by searching for places to stay based on the "Amenities" filter.
 
-### File Overview
+### <div align="center">File Overview:</div>
 <details>
 <summary><i>web_dynamic/0-hbnb.py, web_dynamic/templates/0-hbnb.html, Static files, and Models </i></summary>
 <ul>
@@ -300,13 +300,20 @@ This part of the project updates some existing files, and also creates a directo
   <li><sub>4-hbnb.js is the client-side JavaScript for the page. It handles checkbox changes, sends requests to check API status and retrieve places data, and dynamically updates the page based on user interactions.</sub></li>
 </ul></details>
 
+---
 
-### Detailed Task Summary and Usage
+### <div align="center">Detailed Task Summaries and Usage:</div>
 
-#### Task 1 associated files: web_dynamic/0-hbnb.py, templates/0-hbnb.html, Static Files, Models
+| Task 1 Associated Files:|
+|------------------------|
+| web_dynamic/0-hbnb.py  |
+| templates/0-hbnb.html  |
+| Static Files           |
+| Models                 |
+
 <details>
 <summary>
-Task Summary: </summary>
+Task Breakdown: </summary>
 <ol>
   <li> First, the project begins with creating a Flask web application based on existing files and making modifications to integrate asset caching.</li>
   <li> Then, we copied the following files from the web_flask directory to the web_dynamic directory
@@ -347,7 +354,7 @@ Task Summary: </summary>
 - contains structure and layout of the web page, including headers, filters, places listing, and footer.
 - includes links to CSS stylesheets with query strings appended for asset caching using the <code> cache_id </code> variable.
 
-Static Files (`styles` directory, icon.png):
+Static Files (`styles/` directory, `icon.png`):
 - These files contain CSS stylesheets and image assets used to style and enhance the appearance of the web page.
     - CSS stylesheets define the visual presentation of elements like headers, filters, places, etc.
     - <code>icon.png</code> file is used as the favicon for the web page.
@@ -431,13 +438,20 @@ http://localhost:5000/0-hbnb/
 ```
 ![httplocalhost50000-hbnb](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/ebc0ce94-db22-4da9-a190-00e4438e717a)
 
-</ul>  </details>
+</ul></details>
+
+---
 
 
-#### Task 2 associated files: web_dynamic/1-hbnb.py, templates/1-hbnb.html, static/scripts/1-hbnb.js
+| Task 2 associated files: |
+|------------------------|
+| web_dynamic/1-hbnb.py    |
+| templates/1-hbnb.html    |
+| static/scripts/1-hbnb.js |
+
 <details>
 <summary>
-Task Summary: </summary>
+Task Breakdown: </summary>
 
 The next task involved enhancing functionality of the Flask web application by making the filters section dynamic. This involved updating the Flask route, creating a new HTML template with dynamic filtering functionality using checkboxes, and writing JavaScript code to handle the checkbox changes and update the displayed amenities accordingly. The steps are outlined below:
 
@@ -512,13 +526,20 @@ http://localhost:5000/1-hbnb/
 ![clicking on amenities httplocalhost50001-hbnb](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/3f910ec8-ada4-4129-81df-0cd2f4575954)
 
 ![checking boxes](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/210232b5-9e1f-4f56-9d64-5ddfda9cb7ca)
-
 </ul>  </details>
 
-#### Task 3 associated files: api/v1/app.py, web_dynamic/2-hbnb.py, web_dynamic/templates/2-hbnb.html, web_dynamic/static/styles/3-header.css, web_dynamic/static/scripts/2-hbnb.js
+---
+
+| Task 3 associated files: |
+|------------------------|
+| api/v1/app.py                     |
+| web_dynamic/2-hbnb.py             |
+| web_dynamic/templates/2-hbnb.html |
+| web_dynamic/static/styles/3-header.css |
+| web_dynamic/static/scripts/2-hbnb.js |
 
 <details>
-<summary> Task Summary: </summary>
+<summary> Task Breakdown: </summary>
 In the next task, we followed the below steps to ensure that the HBNB web application and API were updated to handle status checks and also served the correct template with necessary JavaScript functionality.
 <ol>
   <li> Updated the API Entry Point:
@@ -667,13 +688,18 @@ http://localhost:5000/2-hbnb
 **After the API is connected. Note that the circle is now red**
 
 ![API connected OK red circle](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/e5d455db-61e6-4790-b169-2b5f9c084d8c)
+</ul></details>
 
+---
 
-</ul>  </details>
+| Task 4 associated files: |
+|------------------------|
+| web_dynamic/3-hbnb.py                |
+| web_dynamic/templates/3-hbnb.html    |
+| web_dynamic/static/scripts/3-hbnb.js |
 
-#### Task 4 associated files: web_dynamic/3-hbnb.py, web_dynamic/templates/3-hbnb.html, web_dynamic/static/scripts/3-hbnb.js
 <details>
-<summary> Task Summary: </summary>
+<summary> Task Breakdown: </summary>
 
 The overall goal of this task is to load places dynamically from the front-end by making a request to the specified API endpoint and displaying the retrieved data without relying on the back-end to render the places.
 
@@ -736,13 +762,18 @@ http://localhost:5000/3-hbnb
 ```
 
 ![The final result must be the same as previously, but now, places are loaded from the front-end, not from the back-end!](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/a339cab8-81dc-44fb-991c-f61c4fe94726)
-
-  </ul>  </details>
-
+  </ul></details>
   
-#### Task 5 associated files: web_dynamic/4-hbnb.py, web_dynamic/templates/4-hbnb.html, web_dynamic/static/scripts/4-hbnb.js
+---
+
+| Task 5 associated files: |
+|------------------------|
+| web_dynamic/4-hbnb.py                |
+| web_dynamic/templates/4-hbnb.html    |
+| web_dynamic/static/scripts/4-hbnb.js |
+
 <details>
-<summary> Task Summary: </summary>
+<summary> Task Breakdown: </summary>
 
 <ol>
   <li>created 4-hbnb.py (based on 3-hbnb.py) replacing the existing <code>3-hbnb</code>route with <code>4-hbnb</code>.</li>
@@ -814,8 +845,9 @@ http://localhost:5000/4-hbnb
 
 ![image](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/3ba2761a-5ca6-47bd-85b7-a451fdcd0fba)
 
+</ul></details>
 
-  </ul>  </details>
+---
 
 This project was developed on VSCode with Live Server.
   

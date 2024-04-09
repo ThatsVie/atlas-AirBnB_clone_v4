@@ -13,20 +13,6 @@ The console is the first segment of the AirBnB project at Holberton School that 
   <li>Destroy an object</li>
 </ul>
 </details>
-    
-<details>
-<summary>Table of Content</summary>
-<ul>
-  <li><a href="#environment">Environment</a></li>
-  <li><a href="#installation">Installation</a></li>
-  <li><a href="#file-descriptions">File Descriptions</a></li>
-  <li><a href="#usage">Usage</a></li>
-  <li><a href="#examples-of-use">Examples of use</a></li>
-  <li><a href="#bugs">Bugs</a></li>
-  <li><a href="#authors">Authors</a></li>
-  <li><a href="#license">License</a></li>
-</ul>
-</details>
 
 <details>
 <summary> Environment</summary>
@@ -494,11 +480,12 @@ The next task involved enhancing functionality of the Flask web application by m
 <summary> Usage: </summary>
 <ul>
   
-### Input this command in your terminal:
+### Input this command in your terminal to execute 1-hbnb.py after setting several environment variables related to MySQL database connection parameters::
 
 ```bash
 HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db python3 -m web_dynamic.1-hbnb
 ```
+
 
 ### In your browser:
 
@@ -729,6 +716,7 @@ HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost H
 
 ![image](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/f976900e-93d5-491c-8bdb-b2c57b8a5a03)
 
+These logs indicate that the Flask server is running successfully, and static files are being served correctly. 
 
 ### In your browser:
 ```bash
@@ -799,7 +787,7 @@ HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost H
 ```
 ![image](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/0bb185b2-6bda-4443-adf9-9b249645b18a)
 
-
+These logs indicate that the Flask server is running successfully, and static files are being served correctly. 
 
 #### In your browser:
 
@@ -815,15 +803,19 @@ http://localhost:5000/4-hbnb
 
 ![amenities filtered by AC cable and dogs](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/df948fc1-5cdb-47d5-9714-b0676aef6a9b)
 
+You can see the result of the Ameneties being filtered by Air conditioning, Cable TV, Dog(s).
+
 **View of API log after filtering amenities:**
 
 ![image](https://github.com/grahacr/atlas-AirBnB_clone_v4/assets/143755961/3ba2761a-5ca6-47bd-85b7-a451fdcd0fba)
+
+These logs indicate that the Flask server is running successfully, and the API endpoints `/api/v1/status/` and `/api/v1/places_search` are accessible and responding with the correct status codes. 
 
 </ul></details>
 
 ---
 
-This project was developed on VSCode with Live Server.
+**This project was developed on VSCode with Live Server.**
   
 ## Authors
 
